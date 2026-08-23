@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/axl-mark.svg" alt="AXL" width="76" />
+<img src="../../../assets/axl-mark.svg" alt="AXL" width="76" />
 
 # AXL
 
@@ -10,19 +10,19 @@ Một trình biên dịch chuyển đổi đặc tả `.flow` khai báo thành m
 đồng thời công khai các chức năng qua REST và MCP, proxy đến backend hiện có của bạn.
 
 [![CI](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml/badge.svg)](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](.nvmrc)
-[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](CONTRIBUTING.md#running-the-suite)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../../LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](../../../.nvmrc)
+[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](../../../CONTRIBUTING.md#running-the-suite)
 
-[Cách hoạt động](OVERVIEW.md) · [Bắt đầu nhanh](#bắt-đầu-nhanh) · [Tài liệu](#tài-liệu) · [FAQ](FAQ.md) · [Đặc tả](SPECIFICATION.md) · [Đóng góp](CONTRIBUTING.md)
+[Cách hoạt động](../../../OVERVIEW.md) · [Bắt đầu nhanh](#bắt-đầu-nhanh) · [Tài liệu](#tài-liệu) · [FAQ](FAQ.md) · [Đặc tả](../../../SPECIFICATION.md) · [Đóng góp](../../../CONTRIBUTING.md)
 
 </div>
 
 <p align="center">
-  <a href="README.md">English</a> · <a href="README.es.md">Español</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · Tiếng Việt · <a href="README.hi.md">हिन्दी</a> · <a href="README.bn.md">বাংলা</a> · <a href="README.te.md">తెలుగు</a> · <a href="README.ar.md">العربية</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.fr.md">Français</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a>
+  <a href="../../../README.md">English</a> · <a href="../es/README.md">Español</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · Tiếng Việt · <a href="../hi/README.md">हिन्दी</a> · <a href="../bn/README.md">বাংলা</a> · <a href="../te/README.md">తెలుగు</a> · <a href="../ar/README.md">العربية</a> · <a href="../it/README.md">Italiano</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../fr/README.md">Français</a> · <a href="../ru/README.md">Русский</a> · <a href="../tr/README.md">Türkçe</a>
 </p>
 
-<img src="assets/axl-cli.png" alt="axl compile, axl serve và axl inspect trong terminal" width="900" />
+<img src="../../../assets/axl-cli.png" alt="axl compile, axl serve và axl inspect trong terminal" width="900" />
 
 ---
 
@@ -59,7 +59,7 @@ RATE_LIMIT delete_task : 5/min
 
 Yêu cầu **Node.js 20.19.0 trở lên**.
 
-> **Chưa có trên npm.** Cài đặt từ nguồn. Xem [docs/installation.md](docs/installation.md).
+> **Chưa có trên npm.** Cài đặt từ nguồn. Xem [docs/installation.md](installation.md).
 
 ```bash
 git clone https://github.com/Silvercloud-labs/axl.git
@@ -76,7 +76,7 @@ axl init -y && axl compile && axl serve
 
 Kiểm tra những gì bạn đã công khai: `axl inspect http://127.0.0.1:3939`
 
-Hướng dẫn đầy đủ: [docs/quickstart.md](docs/quickstart.md).
+Hướng dẫn đầy đủ: [docs/quickstart.md](quickstart.md).
 
 ---
 
@@ -84,12 +84,12 @@ Hướng dẫn đầy đủ: [docs/quickstart.md](docs/quickstart.md).
 
 | Hướng dẫn | Nội dung |
 |---|---|
-| [Cài đặt](docs/installation.md) | npm, pnpm, bun, từ nguồn và tiện ích mở rộng VS Code |
-| [Bắt đầu nhanh](docs/quickstart.md) | Từ thư mục trống đến lần gọi REST/MCP đầu tiên |
-| [Ngôn ngữ `.flow`](docs/language.md) | `ACTION`, `RESOURCE`, `ENTITY`, kiểu dữ liệu |
-| [Luồng công việc](docs/workflows.md) | `WORKFLOW`, `IF`/`SWITCH`, `PARALLEL` |
-| [Quyền & giới hạn tốc độ](docs/permissions.md) | Bốn cấp độ quyền |
-| [Tham khảo CLI](docs/cli.md) | Mọi lệnh và cờ |
+| [Cài đặt](installation.md) | npm, pnpm, bun, từ nguồn và tiện ích mở rộng VS Code |
+| [Bắt đầu nhanh](quickstart.md) | Từ thư mục trống đến lần gọi REST/MCP đầu tiên |
+| [Ngôn ngữ `.flow`](../../language.md) | `ACTION`, `RESOURCE`, `ENTITY`, kiểu dữ liệu |
+| [Luồng công việc](../../workflows.md) | `WORKFLOW`, `IF`/`SWITCH`, `PARALLEL` |
+| [Quyền & giới hạn tốc độ](../../permissions.md) | Bốn cấp độ quyền |
+| [Tham khảo CLI](../../cli.md) | Mọi lệnh và cờ |
 
 ---
 
@@ -99,12 +99,12 @@ Hướng dẫn đầy đủ: [docs/quickstart.md](docs/quickstart.md).
 |---|---|
 | Câu hỏi, ý tưởng, yêu cầu tính năng | [GitHub Issues](https://github.com/Silvercloud-labs/axl/issues) |
 | Lỗ hổng bảo mật | [Báo cáo riêng tư](https://github.com/Silvercloud-labs/axl/security/advisories/new) |
-| Đóng góp | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Đóng góp | [CONTRIBUTING.md](../../../CONTRIBUTING.md) |
 
 ---
 
 ## Giấy phép
 
-**Apache License 2.0.** Xem [LICENSE](LICENSE) và [NOTICE](NOTICE).
+**Apache License 2.0.** Xem [LICENSE](../../../LICENSE) và [NOTICE](../../../NOTICE).
 
 Copyright 2026 Silvercloud Labs.

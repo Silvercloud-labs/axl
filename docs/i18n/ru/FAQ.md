@@ -45,11 +45,11 @@
 
 ### Как сообщить о проблеме безопасности?
 
-Не в публичном issue. Используйте приватный отчёт об уязвимостях GitHub — см. [SECURITY.md](SECURITY.md).
+Не в публичном issue. Используйте приватный отчёт об уязвимостях GitHub — см. [SECURITY.md](../../../SECURITY.md).
 
 ### Как я могу внести вклад?
 
-См. [CONTRIBUTING.md](CONTRIBUTING.md).
+См. [CONTRIBUTING.md](../../../CONTRIBUTING.md).
 
 ---
 

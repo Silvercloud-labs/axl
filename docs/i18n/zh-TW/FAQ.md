@@ -45,11 +45,11 @@
 
 ### 如何回報安全性問題？
 
-不要在公開的 issue 中。使用 GitHub 的私密漏洞回報 — 請參閱 [SECURITY.md](SECURITY.md)。
+不要在公開的 issue 中。使用 GitHub 的私密漏洞回報 — 請參閱 [SECURITY.md](../../../SECURITY.md)。
 
 ### 我要如何貢獻？
 
-請參閱 [CONTRIBUTING.md](CONTRIBUTING.md)。
+請參閱 [CONTRIBUTING.md](../../../CONTRIBUTING.md)。
 
 ---
 

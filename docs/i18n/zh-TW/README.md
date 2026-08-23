@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/axl-mark.svg" alt="AXL" width="76" />
+<img src="../../../assets/axl-mark.svg" alt="AXL" width="76" />
 
 # AXL
 
@@ -10,19 +10,19 @@
 透過代理向現有後端同時公開 REST 與 MCP 相同的功能。
 
 [![CI](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml/badge.svg)](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](.nvmrc)
-[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](CONTRIBUTING.md#running-the-suite)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../../LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](../../../.nvmrc)
+[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](../../../CONTRIBUTING.md#running-the-suite)
 
-[運作原理](OVERVIEW.md) · [快速開始](#快速開始) · [文件](#文件) · [FAQ](FAQ.md) · [規範](SPECIFICATION.md) · [貢獻](CONTRIBUTING.md)
+[運作原理](../../../OVERVIEW.md) · [快速開始](#快速開始) · [文件](#文件) · [FAQ](FAQ.md) · [規範](../../../SPECIFICATION.md) · [貢獻](../../../CONTRIBUTING.md)
 
 </div>
 
 <p align="center">
-  <a href="README.md">English</a> · <a href="README.es.md">Español</a> · <a href="README.zh-CN.md">简体中文</a> · 繁體中文 · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.bn.md">বাংলা</a> · <a href="README.te.md">తెలుగు</a> · <a href="README.ar.md">العربية</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.fr.md">Français</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a>
+  <a href="../../../README.md">English</a> · <a href="../es/README.md">Español</a> · <a href="../zh-CN/README.md">简体中文</a> · 繁體中文 · <a href="../ja/README.md">日本語</a> · <a href="../ko/README.md">한국어</a> · <a href="../vi/README.md">Tiếng Việt</a> · <a href="../hi/README.md">हिन्दी</a> · <a href="../bn/README.md">বাংলা</a> · <a href="../te/README.md">తెలుగు</a> · <a href="../ar/README.md">العربية</a> · <a href="../it/README.md">Italiano</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../fr/README.md">Français</a> · <a href="../ru/README.md">Русский</a> · <a href="../tr/README.md">Türkçe</a>
 </p>
 
-<img src="assets/axl-cli.png" alt="終端機中的 axl compile、axl serve 和 axl inspect" width="900" />
+<img src="../../../assets/axl-cli.png" alt="終端機中的 axl compile、axl serve 和 axl inspect" width="900" />
 
 ---
 
@@ -71,7 +71,7 @@ REST 與 MCP 由同一引擎從同一 manifest 提供服務，無法產生差異
 
 需要 **Node.js 20.19.0 或以上版本**。
 
-> **尚未發布至 npm。** 請從原始碼安裝。參見 [docs/installation.md](docs/installation.md)。
+> **尚未發布至 npm。** 請從原始碼安裝。參見 [docs/installation.md](installation.md)。
 
 ```bash
 git clone https://github.com/Silvercloud-labs/axl.git
@@ -88,7 +88,7 @@ axl init -y && axl compile && axl serve
 
 查看您公開的內容：`axl inspect http://127.0.0.1:3939`
 
-完整說明：[docs/quickstart.md](docs/quickstart.md)。
+完整說明：[docs/quickstart.md](quickstart.md)。
 
 ---
 
@@ -96,12 +96,12 @@ axl init -y && axl compile && axl serve
 
 | 指南 | 內容 |
 |---|---|
-| [安裝](docs/installation.md) | npm、pnpm、bun、從原始碼及 VS Code 擴充套件 |
-| [快速開始](docs/quickstart.md) | 從空目錄到第一次 REST 與 MCP 呼叫 |
-| [`.flow` 語言](docs/language.md) | `ACTION`、`RESOURCE`、`ENTITY`、型別 |
-| [工作流程](docs/workflows.md) | `WORKFLOW`、`IF`/`SWITCH`、`PARALLEL` |
-| [權限與速率限制](docs/permissions.md) | 四種權限等級 |
-| [CLI 參考](docs/cli.md) | 所有指令與旗標 |
+| [安裝](installation.md) | npm、pnpm、bun、從原始碼及 VS Code 擴充套件 |
+| [快速開始](quickstart.md) | 從空目錄到第一次 REST 與 MCP 呼叫 |
+| [`.flow` 語言](../../language.md) | `ACTION`、`RESOURCE`、`ENTITY`、型別 |
+| [工作流程](../../workflows.md) | `WORKFLOW`、`IF`/`SWITCH`、`PARALLEL` |
+| [權限與速率限制](../../permissions.md) | 四種權限等級 |
+| [CLI 參考](../../cli.md) | 所有指令與旗標 |
 
 ---
 
@@ -111,12 +111,12 @@ axl init -y && axl compile && axl serve
 |---|---|
 | 問題、想法、功能請求 | [GitHub Issues](https://github.com/Silvercloud-labs/axl/issues) |
 | 安全性漏洞 | [私密通報](https://github.com/Silvercloud-labs/axl/security/advisories/new) |
-| 貢獻 | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| 貢獻 | [CONTRIBUTING.md](../../../CONTRIBUTING.md) |
 
 ---
 
 ## 授權條款
 
-**Apache License 2.0。** 參見 [LICENSE](LICENSE) 與 [NOTICE](NOTICE)。
+**Apache License 2.0。** 參見 [LICENSE](../../../LICENSE) 與 [NOTICE](../../../NOTICE)。
 
 Copyright 2026 Silvercloud Labs.

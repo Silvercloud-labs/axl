@@ -45,11 +45,11 @@
 
 ### كيف أُبلّغ عن مشكلة أمنية؟
 
-ليس في issue عام. استخدم تقرير الثغرات الخاصة في GitHub — انظر [SECURITY.md](SECURITY.md).
+ليس في issue عام. استخدم تقرير الثغرات الخاصة في GitHub — انظر [SECURITY.md](../../../SECURITY.md).
 
 ### كيف يمكنني المساهمة؟
 
-انظر [CONTRIBUTING.md](CONTRIBUTING.md).
+انظر [CONTRIBUTING.md](../../../CONTRIBUTING.md).
 
 ---
 

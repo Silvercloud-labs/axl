@@ -45,11 +45,11 @@ Non. AXL ne remplace jamais votre backend — il se place devant lui et l'appell
 
 ### Comment signaler un problème de sécurité ?
 
-Pas dans un issue public. Utilisez le signalement privé de vulnérabilités GitHub — voir [SECURITY.md](SECURITY.md).
+Pas dans un issue public. Utilisez le signalement privé de vulnérabilités GitHub — voir [SECURITY.md](../../../SECURITY.md).
 
 ### Comment puis-je contribuer ?
 
-Voir [CONTRIBUTING.md](CONTRIBUTING.md).
+Voir [CONTRIBUTING.md](../../../CONTRIBUTING.md).
 
 ---
 

@@ -45,11 +45,11 @@ Không. AXL không bao giờ thay thế backend của bạn — nó đứng trư
 
 ### Làm thế nào để báo cáo vấn đề bảo mật?
 
-Không phải trong issue công khai. Sử dụng báo cáo lỗ hổng riêng tư của GitHub — xem [SECURITY.md](SECURITY.md).
+Không phải trong issue công khai. Sử dụng báo cáo lỗ hổng riêng tư của GitHub — xem [SECURITY.md](../../../SECURITY.md).
 
 ### Tôi có thể đóng góp như thế nào?
 
-Xem [CONTRIBUTING.md](CONTRIBUTING.md).
+Xem [CONTRIBUTING.md](../../../CONTRIBUTING.md).
 
 ---
 

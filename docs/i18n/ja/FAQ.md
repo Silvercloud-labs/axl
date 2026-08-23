@@ -45,11 +45,11 @@
 
 ### セキュリティ問題はどう報告しますか？
 
-公開のissueではありません。GitHubのプライベート脆弱性レポートを使用してください — [SECURITY.md](SECURITY.md) を参照。
+公開のissueではありません。GitHubのプライベート脆弱性レポートを使用してください — [SECURITY.md](../../../SECURITY.md) を参照。
 
 ### どのように貢献できますか？
 
-[CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+[CONTRIBUTING.md](../../../CONTRIBUTING.md) を参照してください。
 
 ---
 

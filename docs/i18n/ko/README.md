@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/axl-mark.svg" alt="AXL" width="76" />
+<img src="../../../assets/axl-mark.svg" alt="AXL" width="76" />
 
 # AXL
 
@@ -10,19 +10,19 @@
 기존 백엔드에 프록시하면서 REST와 MCP 모두에서 동일한 기능을 제공합니다.
 
 [![CI](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml/badge.svg)](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](.nvmrc)
-[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](CONTRIBUTING.md#running-the-suite)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../../LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](../../../.nvmrc)
+[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](../../../CONTRIBUTING.md#running-the-suite)
 
-[작동 원리](OVERVIEW.md) · [빠른 시작](#빠른-시작) · [문서](#문서) · [FAQ](FAQ.md) · [명세](SPECIFICATION.md) · [기여](CONTRIBUTING.md)
+[작동 원리](../../../OVERVIEW.md) · [빠른 시작](#빠른-시작) · [문서](#문서) · [FAQ](FAQ.md) · [명세](../../../SPECIFICATION.md) · [기여](../../../CONTRIBUTING.md)
 
 </div>
 
 <p align="center">
-  <a href="README.md">English</a> · <a href="README.es.md">Español</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.ja.md">日本語</a> · 한국어 · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.bn.md">বাংলা</a> · <a href="README.te.md">తెలుగు</a> · <a href="README.ar.md">العربية</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.fr.md">Français</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a>
+  <a href="../../../README.md">English</a> · <a href="../es/README.md">Español</a> · <a href="../zh-CN/README.md">简体中文</a> · <a href="../zh-TW/README.md">繁體中文</a> · <a href="../ja/README.md">日本語</a> · 한국어 · <a href="../vi/README.md">Tiếng Việt</a> · <a href="../hi/README.md">हिन्दी</a> · <a href="../bn/README.md">বাংলা</a> · <a href="../te/README.md">తెలుగు</a> · <a href="../ar/README.md">العربية</a> · <a href="../it/README.md">Italiano</a> · <a href="../pt-BR/README.md">Português (Brasil)</a> · <a href="../fr/README.md">Français</a> · <a href="../ru/README.md">Русский</a> · <a href="../tr/README.md">Türkçe</a>
 </p>
 
-<img src="assets/axl-cli.png" alt="터미널의 axl compile, axl serve, axl inspect" width="900" />
+<img src="../../../assets/axl-cli.png" alt="터미널의 axl compile, axl serve, axl inspect" width="900" />
 
 ---
 
@@ -67,7 +67,7 @@ REST와 MCP는 동일한 엔진에서 동일한 매니페스트로 제공됩니�
 
 **Node.js 20.19.0 이상** 필요.
 
-> **아직 npm에 없습니다.** 소스에서 설치하세요. [docs/installation.md](docs/installation.md) 참조.
+> **아직 npm에 없습니다.** 소스에서 설치하세요. [docs/installation.md](installation.md) 참조.
 
 ```bash
 git clone https://github.com/Silvercloud-labs/axl.git
@@ -84,7 +84,7 @@ axl init -y && axl compile && axl serve
 
 공개된 내용 확인: `axl inspect http://127.0.0.1:3939`
 
-전체 가이드: [docs/quickstart.md](docs/quickstart.md).
+전체 가이드: [docs/quickstart.md](quickstart.md).
 
 ---
 
@@ -92,12 +92,12 @@ axl init -y && axl compile && axl serve
 
 | 가이드 | 내용 |
 |---|---|
-| [설치](docs/installation.md) | npm, pnpm, bun, 소스 설치, VS Code 확장 |
-| [빠른 시작](docs/quickstart.md) | 빈 디렉토리에서 첫 REST/MCP 호출까지 |
-| [`.flow` 언어](docs/language.md) | `ACTION`, `RESOURCE`, `ENTITY`, 타입 |
-| [워크플로우](docs/workflows.md) | `WORKFLOW`, `IF`/`SWITCH`, `PARALLEL` |
-| [권한 및 속도 제한](docs/permissions.md) | 네 가지 권한 레벨 |
-| [CLI 레퍼런스](docs/cli.md) | 모든 명령어와 플래그 |
+| [설치](installation.md) | npm, pnpm, bun, 소스 설치, VS Code 확장 |
+| [빠른 시작](quickstart.md) | 빈 디렉토리에서 첫 REST/MCP 호출까지 |
+| [`.flow` 언어](../../language.md) | `ACTION`, `RESOURCE`, `ENTITY`, 타입 |
+| [워크플로우](../../workflows.md) | `WORKFLOW`, `IF`/`SWITCH`, `PARALLEL` |
+| [권한 및 속도 제한](../../permissions.md) | 네 가지 권한 레벨 |
+| [CLI 레퍼런스](../../cli.md) | 모든 명령어와 플래그 |
 
 ---
 
@@ -107,12 +107,12 @@ axl init -y && axl compile && axl serve
 |---|---|
 | 질문, 아이디어, 기능 요청 | [GitHub Issues](https://github.com/Silvercloud-labs/axl/issues) |
 | 보안 취약점 | [비공개 신고](https://github.com/Silvercloud-labs/axl/security/advisories/new) |
-| 기여 | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| 기여 | [CONTRIBUTING.md](../../../CONTRIBUTING.md) |
 
 ---
 
 ## 라이선스
 
-**Apache License 2.0.** [LICENSE](LICENSE)와 [NOTICE](NOTICE) 참조.
+**Apache License 2.0.** [LICENSE](../../../LICENSE)와 [NOTICE](../../../NOTICE) 참조.
 
 Copyright 2026 Silvercloud Labs.

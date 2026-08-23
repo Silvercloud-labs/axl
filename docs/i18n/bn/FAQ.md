@@ -45,7 +45,7 @@
 
 ### নিরাপত্তা সমস্যা কীভাবে রিপোর্ট করব?
 
-Public issue-এ নয়। GitHub-এর private vulnerability reporting ব্যবহার করুন — [SECURITY.md](SECURITY.md) দেখুন।
+Public issue-এ নয়। GitHub-এর private vulnerability reporting ব্যবহার করুন — [SECURITY.md](../../../SECURITY.md) দেখুন।
 
 ---
 

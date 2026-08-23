@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/axl-mark.svg" alt="AXL" width="76" />
+<img src="../../../assets/axl-mark.svg" alt="AXL" width="76" />
 
 # AXL
 
@@ -10,39 +10,39 @@
 既存のバックエンドにプロキシしながら、REST と MCP の両方で同じ機能を提供します。
 
 [![CI](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml/badge.svg)](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](.nvmrc)
-[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](CONTRIBUTING.md#running-the-suite)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../../LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](../../../.nvmrc)
+[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](../../../CONTRIBUTING.md#running-the-suite)
 
-[仕組み](OVERVIEW.md) ·
+[仕組み](../../../OVERVIEW.md) ·
 [クイックスタート](#クイックスタート) ·
 [ドキュメント](#ドキュメント) ·
 [FAQ](FAQ.md) ·
-[仕様](SPECIFICATION.md) ·
-[コントリビュート](CONTRIBUTING.md)
+[仕様](../../../SPECIFICATION.md) ·
+[コントリビュート](../../../CONTRIBUTING.md)
 
 </div>
 
 <p align="center">
-  <a href="README.md">English</a> ·
-  <a href="README.es.md">Español</a> ·
-  <a href="README.zh-CN.md">简体中文</a> ·
-  <a href="README.zh-TW.md">繁體中文</a> ·
+  <a href="../../../README.md">English</a> ·
+  <a href="../es/README.md">Español</a> ·
+  <a href="../zh-CN/README.md">简体中文</a> ·
+  <a href="../zh-TW/README.md">繁體中文</a> ·
   日本語 ·
-  <a href="README.ko.md">한국어</a> ·
-  <a href="README.vi.md">Tiếng Việt</a> ·
-  <a href="README.hi.md">हिन्दी</a> ·
-  <a href="README.bn.md">বাংলা</a> ·
-  <a href="README.te.md">తెలుగు</a> ·
-  <a href="README.ar.md">العربية</a> ·
-  <a href="README.it.md">Italiano</a> ·
-  <a href="README.pt-BR.md">Português (Brasil)</a> ·
-  <a href="README.fr.md">Français</a> ·
-  <a href="README.ru.md">Русский</a> ·
-  <a href="README.tr.md">Türkçe</a>
+  <a href="../ko/README.md">한국어</a> ·
+  <a href="../vi/README.md">Tiếng Việt</a> ·
+  <a href="../hi/README.md">हिन्दी</a> ·
+  <a href="../bn/README.md">বাংলা</a> ·
+  <a href="../te/README.md">తెలుగు</a> ·
+  <a href="../ar/README.md">العربية</a> ·
+  <a href="../it/README.md">Italiano</a> ·
+  <a href="../pt-BR/README.md">Português (Brasil)</a> ·
+  <a href="../fr/README.md">Français</a> ·
+  <a href="../ru/README.md">Русский</a> ·
+  <a href="../tr/README.md">Türkçe</a>
 </p>
 
-<img src="assets/axl-cli.png" alt="ターミナルの axl compile、axl serve、axl inspect" width="900" />
+<img src="../../../assets/axl-cli.png" alt="ターミナルの axl compile、axl serve、axl inspect" width="900" />
 
 ---
 
@@ -93,7 +93,7 @@ REST と MCP は同じマニフェストから同じエンジンで提供され�
 
 **Node.js 20.19.0 以上** が必要です。
 
-> **まだ npm にありません。** ソースからインストールしてください。[docs/installation.md](docs/installation.md) を参照。
+> **まだ npm にありません。** ソースからインストールしてください。[docs/installation.md](installation.md) を参照。
 
 ```bash
 git clone https://github.com/Silvercloud-labs/axl.git
@@ -121,7 +121,7 @@ axl serve          # REST + MCP + WebSocket on 127.0.0.1:3939
 axl inspect http://127.0.0.1:3939
 ```
 
-完全なガイド：[docs/quickstart.md](docs/quickstart.md)。
+完全なガイド：[docs/quickstart.md](quickstart.md)。
 
 ---
 
@@ -129,12 +129,12 @@ axl inspect http://127.0.0.1:3939
 
 | ガイド | 内容 |
 |---|---|
-| [インストール](docs/installation.md) | npm、pnpm、bun、ソースから、VS Code 拡張 |
-| [クイックスタート](docs/quickstart.md) | 空のディレクトリから最初の REST/MCP 呼び出しまで |
-| [`.flow` 言語](docs/language.md) | `ACTION`、`RESOURCE`、`ENTITY`、型 |
-| [ワークフロー](docs/workflows.md) | `WORKFLOW`、`IF`/`SWITCH`、`PARALLEL` |
-| [権限](docs/permissions.md) | 4つの権限レベル |
-| [CLI リファレンス](docs/cli.md) | すべてのコマンドとフラグ |
+| [インストール](installation.md) | npm、pnpm、bun、ソースから、VS Code 拡張 |
+| [クイックスタート](quickstart.md) | 空のディレクトリから最初の REST/MCP 呼び出しまで |
+| [`.flow` 言語](../../language.md) | `ACTION`、`RESOURCE`、`ENTITY`、型 |
+| [ワークフロー](../../workflows.md) | `WORKFLOW`、`IF`/`SWITCH`、`PARALLEL` |
+| [権限](../../permissions.md) | 4つの権限レベル |
+| [CLI リファレンス](../../cli.md) | すべてのコマンドとフラグ |
 
 ---
 
@@ -145,12 +145,12 @@ axl inspect http://127.0.0.1:3939
 | 質問、アイデア、機能リクエスト | [GitHub Issues](https://github.com/Silvercloud-labs/axl/issues) |
 | バグ報告 | [GitHub Issues](https://github.com/Silvercloud-labs/axl/issues) |
 | セキュリティ脆弱性 | [プライベート報告](https://github.com/Silvercloud-labs/axl/security/advisories/new) |
-| コントリビュート | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| コントリビュート | [CONTRIBUTING.md](../../../CONTRIBUTING.md) |
 
 ---
 
 ## ライセンス
 
-**Apache License 2.0。** [LICENSE](LICENSE) と [NOTICE](NOTICE) を参照。
+**Apache License 2.0。** [LICENSE](../../../LICENSE) と [NOTICE](../../../NOTICE) を参照。
 
 Copyright 2026 Silvercloud Labs.

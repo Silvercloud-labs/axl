@@ -51,11 +51,11 @@ YAML no tiene verificador de tipos ni diagnósticos con números de línea. Type
 
 ### ¿Cómo reporto un problema de seguridad?
 
-No en un issue público. Usa el informe privado de vulnerabilidades de GitHub — ver [SECURITY.md](SECURITY.md).
+No en un issue público. Usa el informe privado de vulnerabilidades de GitHub — ver [SECURITY.md](../../../SECURITY.md).
 
 ### ¿Cómo puedo contribuir?
 
-Ver [CONTRIBUTING.md](CONTRIBUTING.md). Los issues describiendo un problema real son tan útiles como los pull requests.
+Ver [CONTRIBUTING.md](../../../CONTRIBUTING.md). Los issues describiendo un problema real son tan útiles como los pull requests.
 
 ---
 

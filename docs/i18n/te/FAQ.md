@@ -45,11 +45,11 @@
 
 ### Security సమస్య ఎలా రిపోర్ట్ చేయాలి?
 
-Public issue లో కాదు. GitHub's private vulnerability reporting ఉపయోగించండి — [SECURITY.md](SECURITY.md) చూడండి.
+Public issue లో కాదు. GitHub's private vulnerability reporting ఉపయోగించండి — [SECURITY.md](../../../SECURITY.md) చూడండి.
 
 ### నేను ఎలా సహకరించగలను?
 
-[CONTRIBUTING.md](CONTRIBUTING.md) చూడండి.
+[CONTRIBUTING.md](../../../CONTRIBUTING.md) చూడండి.
 
 ---
 

@@ -45,11 +45,11 @@ Hayır. AXL backend'inizi hiçbir zaman değiştirmez — önünde durur ve HTTP
 
 ### Güvenlik sorununu nasıl bildiririm?
 
-Genel bir issue'da değil. GitHub'ın özel güvenlik açığı bildirimini kullanın — [SECURITY.md](SECURITY.md)'ye bakın.
+Genel bir issue'da değil. GitHub'ın özel güvenlik açığı bildirimini kullanın — [SECURITY.md](../../../SECURITY.md)'ye bakın.
 
 ### Nasıl katkıda bulunabilirim?
 
-[CONTRIBUTING.md](CONTRIBUTING.md)'ye bakın.
+[CONTRIBUTING.md](../../../CONTRIBUTING.md)'ye bakın.
 
 ---
 

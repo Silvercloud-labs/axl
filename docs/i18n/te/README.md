@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/axl-mark.svg" alt="AXL" width="76" />
+<img src="../../../assets/axl-mark.svg" alt="AXL" width="76" />
 
 # AXL
 
@@ -10,39 +10,39 @@
 మీ ఉన్న బ్యాకెండ్‌కి ప్రాక్సీ ద్వారా REST మరియు MCP రెండింటి మీదా అదే సామర్థ్యాలను అందిస్తుంది.
 
 [![CI](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml/badge.svg)](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](.nvmrc)
-[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](CONTRIBUTING.md#running-the-suite)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../../LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](../../../.nvmrc)
+[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](../../../CONTRIBUTING.md#running-the-suite)
 
-[ఇది ఎలా పని చేస్తుంది](OVERVIEW.md) ·
+[ఇది ఎలా పని చేస్తుంది](../../../OVERVIEW.md) ·
 [త్వరిత ప్రారంభం](#త్వరిత-ప్రారంభం) ·
 [డాక్యుమెంటేషన్](#డాక్యుమెంటేషన్) ·
 [FAQ](FAQ.md) ·
-[స్పెసిఫికేషన్](SPECIFICATION.md) ·
-[సహకరించండి](CONTRIBUTING.md)
+[స్పెసిఫికేషన్](../../../SPECIFICATION.md) ·
+[సహకరించండి](../../../CONTRIBUTING.md)
 
 </div>
 
 <p align="center">
-  <a href="README.md">English</a> ·
-  <a href="README.es.md">Español</a> ·
-  <a href="README.zh-CN.md">简体中文</a> ·
-  <a href="README.zh-TW.md">繁體中文</a> ·
-  <a href="README.ja.md">日本語</a> ·
-  <a href="README.ko.md">한국어</a> ·
-  <a href="README.vi.md">Tiếng Việt</a> ·
-  <a href="README.hi.md">हिन्दी</a> ·
-  <a href="README.bn.md">বাংলা</a> ·
+  <a href="../../../README.md">English</a> ·
+  <a href="../es/README.md">Español</a> ·
+  <a href="../zh-CN/README.md">简体中文</a> ·
+  <a href="../zh-TW/README.md">繁體中文</a> ·
+  <a href="../ja/README.md">日本語</a> ·
+  <a href="../ko/README.md">한국어</a> ·
+  <a href="../vi/README.md">Tiếng Việt</a> ·
+  <a href="../hi/README.md">हिन्दी</a> ·
+  <a href="../bn/README.md">বাংলা</a> ·
   తెలుగు ·
-  <a href="README.ar.md">العربية</a> ·
-  <a href="README.it.md">Italiano</a> ·
-  <a href="README.pt-BR.md">Português (Brasil)</a> ·
-  <a href="README.fr.md">Français</a> ·
-  <a href="README.ru.md">Русский</a> ·
-  <a href="README.tr.md">Türkçe</a>
+  <a href="../ar/README.md">العربية</a> ·
+  <a href="../it/README.md">Italiano</a> ·
+  <a href="../pt-BR/README.md">Português (Brasil)</a> ·
+  <a href="../fr/README.md">Français</a> ·
+  <a href="../ru/README.md">Русский</a> ·
+  <a href="../tr/README.md">Türkçe</a>
 </p>
 
-<img src="assets/axl-cli.png" alt="టెర్మినల్‌లో axl compile, axl serve మరియు axl inspect" width="900" />
+<img src="../../../assets/axl-cli.png" alt="టెర్మినల్‌లో axl compile, axl serve మరియు axl inspect" width="900" />
 
 ---
 
@@ -93,7 +93,7 @@ REST మరియు MCP ఒకే మ్యానిఫెస్ట్ ను�
 
 **Node.js 20.19.0 లేదా అంతకంటే ఎక్కువ** అవసరం.
 
-> **ఇంకా npm లో లేదు.** సోర్స్ నుండి ఇన్‌స్టాల్ చేయండి. చూడండి [docs/installation.md](docs/installation.md).
+> **ఇంకా npm లో లేదు.** సోర్స్ నుండి ఇన్‌స్టాల్ చేయండి. చూడండి [docs/installation.md](installation.md).
 
 ```bash
 git clone https://github.com/Silvercloud-labs/axl.git
@@ -121,7 +121,7 @@ axl serve          # REST + MCP + WebSocket on 127.0.0.1:3939
 axl inspect http://127.0.0.1:3939
 ```
 
-పూర్తి వాక్‌త్రూ: [docs/quickstart.md](docs/quickstart.md).
+పూర్తి వాక్‌త్రూ: [docs/quickstart.md](quickstart.md).
 
 ---
 
@@ -129,12 +129,12 @@ axl inspect http://127.0.0.1:3939
 
 | గైడ్ | విషయాలు |
 |---|---|
-| [ఇన్‌స్టాలేషన్](docs/installation.md) | npm, pnpm, bun, సోర్స్ నుండి మరియు VS Code ఎక్స్‌టెన్షన్ |
-| [త్వరిత ప్రారంభం](docs/quickstart.md) | ఖాళీ డైరెక్టరీ నుండి మొదటి REST మరియు MCP కాల్ వరకు |
-| [`.flow` భాష](docs/language.md) | `ACTION`, `RESOURCE`, `ENTITY`, టైప్లు |
-| [వర్క్‌ఫ్లోలు](docs/workflows.md) | `WORKFLOW`, `IF`/`SWITCH`, `PARALLEL` |
-| [పర్మిషన్లు](docs/permissions.md) | నాలుగు పర్మిషన్ లెవల్స్ |
-| [CLI రిఫరెన్స్](docs/cli.md) | ప్రతి కమాండ్ మరియు ఫ్లాగ్ |
+| [ఇన్‌స్టాలేషన్](installation.md) | npm, pnpm, bun, సోర్స్ నుండి మరియు VS Code ఎక్స్‌టెన్షన్ |
+| [త్వరిత ప్రారంభం](quickstart.md) | ఖాళీ డైరెక్టరీ నుండి మొదటి REST మరియు MCP కాల్ వరకు |
+| [`.flow` భాష](../../language.md) | `ACTION`, `RESOURCE`, `ENTITY`, టైప్లు |
+| [వర్క్‌ఫ్లోలు](../../workflows.md) | `WORKFLOW`, `IF`/`SWITCH`, `PARALLEL` |
+| [పర్మిషన్లు](../../permissions.md) | నాలుగు పర్మిషన్ లెవల్స్ |
+| [CLI రిఫరెన్స్](../../cli.md) | ప్రతి కమాండ్ మరియు ఫ్లాగ్ |
 
 ---
 
@@ -145,12 +145,12 @@ axl inspect http://127.0.0.1:3939
 | ప్రశ్నలు, ఆలోచనలు, ఫీచర్ రిక్వెస్ట్‌లు | [GitHub Issues](https://github.com/Silvercloud-labs/axl/issues) |
 | బగ్ రిపోర్ట్‌లు | [GitHub Issues](https://github.com/Silvercloud-labs/axl/issues) |
 | భద్రతా దుర్బలతలు | [ప్రైవేట్ అడ్వైజరీ](https://github.com/Silvercloud-labs/axl/security/advisories/new) |
-| సహకారం | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| సహకారం | [CONTRIBUTING.md](../../../CONTRIBUTING.md) |
 
 ---
 
 ## లైసెన్స్
 
-**Apache License 2.0.** చూడండి [LICENSE](LICENSE) మరియు [NOTICE](NOTICE).
+**Apache License 2.0.** చూడండి [LICENSE](../../../LICENSE) మరియు [NOTICE](../../../NOTICE).
 
 Copyright 2026 Silvercloud Labs.

@@ -25,21 +25,21 @@ exposing the same capabilities over REST and MCP, proxied to your existing backe
 
 <p align="center">
   English ·
-  <a href="README.es.md">Español</a> ·
-  <a href="README.zh-CN.md">简体中文</a> ·
-  <a href="README.zh-TW.md">繁體中文</a> ·
-  <a href="README.ja.md">日本語</a> ·
-  <a href="README.ko.md">한국어</a> ·
-  <a href="README.vi.md">Tiếng Việt</a> ·
-  <a href="README.hi.md">हिन्दी</a> ·
-  <a href="README.bn.md">বাংলা</a> ·
-  <a href="README.te.md">తెలుగు</a> ·
-  <a href="README.ar.md">العربية</a> ·
-  <a href="README.it.md">Italiano</a> ·
-  <a href="README.pt-BR.md">Português (Brasil)</a> ·
-  <a href="README.fr.md">Français</a> ·
-  <a href="README.ru.md">Русский</a> ·
-  <a href="README.tr.md">Türkçe</a>
+  <a href="docs/i18n/es/README.md">Español</a> ·
+  <a href="docs/i18n/zh-CN/README.md">简体中文</a> ·
+  <a href="docs/i18n/zh-TW/README.md">繁體中文</a> ·
+  <a href="docs/i18n/ja/README.md">日本語</a> ·
+  <a href="docs/i18n/ko/README.md">한국어</a> ·
+  <a href="docs/i18n/vi/README.md">Tiếng Việt</a> ·
+  <a href="docs/i18n/hi/README.md">हिन्दी</a> ·
+  <a href="docs/i18n/bn/README.md">বাংলা</a> ·
+  <a href="docs/i18n/te/README.md">తెలుగు</a> ·
+  <a href="docs/i18n/ar/README.md">العربية</a> ·
+  <a href="docs/i18n/it/README.md">Italiano</a> ·
+  <a href="docs/i18n/pt-BR/README.md">Português (Brasil)</a> ·
+  <a href="docs/i18n/fr/README.md">Français</a> ·
+  <a href="docs/i18n/ru/README.md">Русский</a> ·
+  <a href="docs/i18n/tr/README.md">Türkçe</a>
 </p>
 
 <img src="assets/axl-cli.png" alt="axl compile, axl serve and axl inspect in a terminal" width="900" />

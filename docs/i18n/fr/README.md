@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/axl-mark.svg" alt="AXL" width="76" />
+<img src="../../../assets/axl-mark.svg" alt="AXL" width="76" />
 
 # AXL
 
@@ -10,39 +10,39 @@ Un compilateur qui transforme une spécification `.flow` déclarative en un serv
 exposant les mêmes capacités via REST et MCP, proxié vers votre backend existant.
 
 [![CI](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml/badge.svg)](https://github.com/Silvercloud-labs/axl/actions/workflows/ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](.nvmrc)
-[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](CONTRIBUTING.md#running-the-suite)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../../LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20.19.0-brightgreen.svg)](../../../.nvmrc)
+[![Tests](https://img.shields.io/badge/tests-750%20passing-brightgreen.svg)](../../../CONTRIBUTING.md#running-the-suite)
 
-[Comment ça fonctionne](OVERVIEW.md) ·
+[Comment ça fonctionne](../../../OVERVIEW.md) ·
 [Démarrage rapide](#démarrage-rapide) ·
 [Documentation](#documentation) ·
 [FAQ](FAQ.md) ·
-[Spécification](SPECIFICATION.md) ·
-[Contribuer](CONTRIBUTING.md)
+[Spécification](../../../SPECIFICATION.md) ·
+[Contribuer](../../../CONTRIBUTING.md)
 
 </div>
 
 <p align="center">
-  <a href="README.md">English</a> ·
-  <a href="README.es.md">Español</a> ·
-  <a href="README.zh-CN.md">简体中文</a> ·
-  <a href="README.zh-TW.md">繁體中文</a> ·
-  <a href="README.ja.md">日本語</a> ·
-  <a href="README.ko.md">한국어</a> ·
-  <a href="README.vi.md">Tiếng Việt</a> ·
-  <a href="README.hi.md">हिन्दी</a> ·
-  <a href="README.bn.md">বাংলা</a> ·
-  <a href="README.te.md">తెలుగు</a> ·
-  <a href="README.ar.md">العربية</a> ·
-  <a href="README.it.md">Italiano</a> ·
-  <a href="README.pt-BR.md">Português (Brasil)</a> ·
+  <a href="../../../README.md">English</a> ·
+  <a href="../es/README.md">Español</a> ·
+  <a href="../zh-CN/README.md">简体中文</a> ·
+  <a href="../zh-TW/README.md">繁體中文</a> ·
+  <a href="../ja/README.md">日本語</a> ·
+  <a href="../ko/README.md">한국어</a> ·
+  <a href="../vi/README.md">Tiếng Việt</a> ·
+  <a href="../hi/README.md">हिन्दी</a> ·
+  <a href="../bn/README.md">বাংলা</a> ·
+  <a href="../te/README.md">తెలుగు</a> ·
+  <a href="../ar/README.md">العربية</a> ·
+  <a href="../it/README.md">Italiano</a> ·
+  <a href="../pt-BR/README.md">Português (Brasil)</a> ·
   Français ·
-  <a href="README.ru.md">Русский</a> ·
-  <a href="README.tr.md">Türkçe</a>
+  <a href="../ru/README.md">Русский</a> ·
+  <a href="../tr/README.md">Türkçe</a>
 </p>
 
-<img src="assets/axl-cli.png" alt="axl compile, axl serve et axl inspect dans un terminal" width="900" />
+<img src="../../../assets/axl-cli.png" alt="axl compile, axl serve et axl inspect dans un terminal" width="900" />
 
 ---
 
@@ -93,7 +93,7 @@ Le runtime ne consomme que `manifest.json`. Il ne voit jamais un fichier `.flow`
 
 Nécessite **Node.js 20.19.0 ou supérieur**.
 
-> **Pas encore sur npm.** Installez depuis les sources. Voir [docs/installation.md](docs/installation.md).
+> **Pas encore sur npm.** Installez depuis les sources. Voir [docs/installation.md](installation.md).
 
 ```bash
 git clone https://github.com/Silvercloud-labs/axl.git
@@ -121,7 +121,7 @@ Puis inspectez ce que vous venez d'exposer :
 axl inspect http://127.0.0.1:3939
 ```
 
-Guide complet : [docs/quickstart.md](docs/quickstart.md).
+Guide complet : [docs/quickstart.md](quickstart.md).
 
 ---
 
@@ -129,12 +129,12 @@ Guide complet : [docs/quickstart.md](docs/quickstart.md).
 
 | Guide | Contenu |
 |---|---|
-| [Installation](docs/installation.md) | npm, pnpm, bun, depuis les sources et l'extension VS Code |
-| [Démarrage rapide](docs/quickstart.md) | De zéro au premier appel REST et MCP |
-| [Le langage `.flow`](docs/language.md) | `ACTION`, `RESOURCE`, `ENTITY`, types |
-| [Workflows](docs/workflows.md) | `WORKFLOW`, `IF`/`SWITCH`, `PARALLEL` |
-| [Permissions](docs/permissions.md) | Les quatre niveaux de permission |
-| [Référence CLI](docs/cli.md) | Toutes les commandes et options |
+| [Installation](installation.md) | npm, pnpm, bun, depuis les sources et l'extension VS Code |
+| [Démarrage rapide](quickstart.md) | De zéro au premier appel REST et MCP |
+| [Le langage `.flow`](../../language.md) | `ACTION`, `RESOURCE`, `ENTITY`, types |
+| [Workflows](../../workflows.md) | `WORKFLOW`, `IF`/`SWITCH`, `PARALLEL` |
+| [Permissions](../../permissions.md) | Les quatre niveaux de permission |
+| [Référence CLI](../../cli.md) | Toutes les commandes et options |
 
 ---
 
@@ -145,12 +145,12 @@ Guide complet : [docs/quickstart.md](docs/quickstart.md).
 | Questions, idées, demandes | [GitHub Issues](https://github.com/Silvercloud-labs/axl/issues) |
 | Rapports de bugs | [GitHub Issues](https://github.com/Silvercloud-labs/axl/issues) |
 | Vulnérabilités de sécurité | [Rapport privé](https://github.com/Silvercloud-labs/axl/security/advisories/new) |
-| Contribuer | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Contribuer | [CONTRIBUTING.md](../../../CONTRIBUTING.md) |
 
 ---
 
 ## Licence
 
-**Apache License 2.0.** Voir [LICENSE](LICENSE) et [NOTICE](NOTICE).
+**Apache License 2.0.** Voir [LICENSE](../../../LICENSE) et [NOTICE](../../../NOTICE).
 
 Copyright 2026 Silvercloud Labs.

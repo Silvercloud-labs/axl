@@ -45,11 +45,11 @@
 
 ### 보안 문제는 어떻게 보고하나요?
 
-공개 이슈가 아닌 GitHub의 비공개 취약점 보고를 사용하세요 — [SECURITY.md](SECURITY.md) 참조.
+공개 이슈가 아닌 GitHub의 비공개 취약점 보고를 사용하세요 — [SECURITY.md](../../../SECURITY.md) 참조.
 
 ### 어떻게 기여할 수 있나요?
 
-[CONTRIBUTING.md](CONTRIBUTING.md) 참조.
+[CONTRIBUTING.md](../../../CONTRIBUTING.md) 참조.
 
 ---
 

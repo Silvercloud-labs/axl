@@ -45,11 +45,11 @@
 
 ### Security समस्या कैसे रिपोर्ट करें?
 
-किसी public issue में नहीं। GitHub का private vulnerability reporting उपयोग करें — [SECURITY.md](SECURITY.md) देखें।
+किसी public issue में नहीं। GitHub का private vulnerability reporting उपयोग करें — [SECURITY.md](../../../SECURITY.md) देखें।
 
 ### मैं कैसे योगदान कर सकता हूँ?
 
-[CONTRIBUTING.md](CONTRIBUTING.md) देखें।
+[CONTRIBUTING.md](../../../CONTRIBUTING.md) देखें।
 
 ---
 
