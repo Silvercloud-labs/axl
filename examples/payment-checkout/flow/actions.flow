@@ -1,0 +1,42 @@
+ACTION search_product
+  DESC "Search for a product"
+  INPUT
+    query : String REQUIRED
+  OUTPUT Product
+  ENDPOINT GET /products
+
+ACTION add_to_cart
+  DESC "Add product to cart"
+  INPUT
+    product_id : String REQUIRED
+    quantity : Number
+  OUTPUT CartResponse
+  ENDPOINT POST /cart
+
+ACTION checkout
+  DESC "Checkout cart and create an order"
+  INPUT
+    cart_id : String REQUIRED
+  OUTPUT OrderResponse
+  ENDPOINT POST /orders
+
+ACTION create_payment_link
+  DESC "Create a payment link for an order"
+  INPUT
+    order_id : String REQUIRED
+  OUTPUT PaymentLinkResponse
+  ENDPOINT POST /payments
+
+ACTION verify_payment
+  DESC "Verify payment status"
+  INPUT
+    payment_id : String REQUIRED
+  OUTPUT VerifyPaymentResponse
+  ENDPOINT GET /payments/{payment_id}/verify
+
+ACTION place_order
+  DESC "Place order after payment verification"
+  INPUT
+    payment_id : String REQUIRED
+  OUTPUT PlaceOrderResponse
+  ENDPOINT POST /orders/confirm

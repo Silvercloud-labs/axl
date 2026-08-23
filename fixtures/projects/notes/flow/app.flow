@@ -1,0 +1,9 @@
+-- app.flow
+
+APP notes
+NAME "NotesApp"
+VERSION 1.0.0
+DESCRIPTION "SimpleNotesApp"
+FRAMEWORK Express
+LANGUAGE JavaScript
+BASE_URL http://127.0.0.1:4100/api

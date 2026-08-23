@@ -1,0 +1,6 @@
+{
+  "name": "taskdeck",
+  "flowDir": "./flow",
+  "outDir": "./build",
+  "generatedDir": "./generated"
+}

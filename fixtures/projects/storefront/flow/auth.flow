@@ -1,0 +1,9 @@
+-- auth.flow
+
+PERMISSION add_to_cart : AUTH
+PERMISSION refund_order : ROLE staff
+PERMISSION update_profile : OWNER user_id
+PERMISSION cart : AUTH
+PERMISSION store_status : PUBLIC
+
+RATE_LIMIT store_status : 5/min

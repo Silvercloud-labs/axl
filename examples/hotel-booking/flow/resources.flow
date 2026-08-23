@@ -1,0 +1,18 @@
+-- resources.flow
+-- Read-only views of backend state. A RESOURCE becomes GET /resources/<name>
+-- over REST and a real MCP resource -- never a tool, so it stays out of the
+-- mutation menu a model chooses from.
+--
+-- A resource is addressed by name alone: no INPUT block, GET only, and no
+-- {placeholders} in the path, because with no inputs there would be nothing to
+-- fill them with. Parameterised reads belong in an ACTION.
+
+RESOURCE featured_hotels
+  DESC "The hotels currently promoted on the landing page"
+  OUTPUT List<Hotel>
+  ENDPOINT GET /hotels/featured
+
+RESOURCE my_bookings
+  DESC "Every booking belonging to the calling guest"
+  OUTPUT List<Booking>
+  ENDPOINT GET /bookings/mine

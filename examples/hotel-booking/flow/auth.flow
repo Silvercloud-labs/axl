@@ -1,0 +1,52 @@
+-- auth.flow
+-- Permission, confirmation and rate-limit rules.
+--
+-- PERMISSION is required on every action and resource. Without one, a capability
+-- falls through to the PUBLIC default and silently exposes the backend.
+--
+-- ROLE and OWNER read identity claims from X-AXL-Subject and X-AXL-Roles, and
+-- those headers are honoured ONLY when the server runs with
+-- --trust-identity-headers. With the flag off, both levels deny every request --
+-- deliberately, because AXL never validates the bearer token, so an unguarded
+-- header gate would be decoration rather than a control.
+
+-- Public: browsing and sign-up need no session.
+PERMISSION search_hotels    : PUBLIC
+PERMISSION list_rooms       : PUBLIC
+PERMISSION register         : PUBLIC
+PERMISSION featured_hotels  : PUBLIC
+
+-- Authenticated: any signed-in guest.
+PERMISSION create_booking     : AUTH
+PERMISSION charge_booking     : AUTH
+PERMISSION reserve_inventory  : AUTH
+PERMISSION send_confirmation  : AUTH
+PERMISSION cancel_booking     : AUTH
+PERMISSION my_bookings        : AUTH
+
+-- Staff only. Requires --trust-identity-headers and a gateway that overwrites
+-- X-AXL-Roles on every request.
+PERMISSION refund_booking : ROLE staff
+PERMISSION close_hotel    : ROLE admin
+
+-- Owner-scoped. The caller's verified subject must equal the user_id argument.
+-- Note what this does NOT promise: it cannot assert the caller owns some other
+-- record, because that needs a backend lookup.
+PERMISSION update_profile : OWNER user_id
+
+-- Two-phase commit. The action returns a confirmation envelope instead of
+-- executing; the caller must present the OTP to POST /confirm before anything
+-- reaches the backend.
+CONFIRM cancel_booking : OTP
+CONFIRM refund_booking : OTP
+CONFIRM close_hotel    : OTP
+
+-- Rate limits. Units are sec, min, hr and day -- and only those four. Any other
+-- spelling compiles without a diagnostic and applies no limit at all, so every
+-- PUBLIC capability below is worth verifying by actually exceeding it.
+RATE_LIMIT search_hotels   : 60/min
+RATE_LIMIT list_rooms      : 60/min
+RATE_LIMIT register        : 5/hr
+RATE_LIMIT featured_hotels : 120/min
+RATE_LIMIT create_booking  : 20/min
+RATE_LIMIT refund_booking  : 10/day

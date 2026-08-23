@@ -1,0 +1,12 @@
+APP booking
+NAME "BookingPlatform"
+VERSION 1.0.0
+DESCRIPTION "Travel Booking"
+FRAMEWORK Express
+LANGUAGE TypeScript
+DATABASE MongoDB
+BASE_URL https://api.booking.example
+
+GENERATORS
+  MCP
+  OPENAPI

@@ -1,0 +1,71 @@
+-- workflows.flow
+-- Orchestration. A workflow runs inline with the request that started it, and
+-- USING binds an argument from an earlier step's output.
+--
+-- Modifier order: USING must come first; RETRY and TIMEOUT may follow in either
+-- order. TIMEOUT is a real deadline enforced with AbortController -- the backend
+-- request is genuinely cancelled -- and it applies per attempt, not per step.
+
+-- The booking happy path.
+--
+-- charge_booking and reserve_inventory are independent of each other and both
+-- depend only on create_booking, so they run concurrently.
+--
+-- PARALLEL takes only STEPs: at least two, no duplicate action inside one block,
+-- and no CONFIRM. That last restriction is load-bearing. A confirmation pauses
+-- the workflow and a pause writes exactly one record keyed by one token; two
+-- members pausing would need two, and members that already finished have
+-- committed side effects that cannot be replayed.
+--
+-- A member may not bind from a sibling either -- members are dispatched
+-- together, so a sibling's output does not exist yet at dispatch time.
+WORKFLOW BookingCheckout
+
+  STEP create_booking
+
+  PARALLEL
+    STEP charge_booking    USING booking_id = create_booking.id RETRY 3 TIMEOUT 5000
+    STEP reserve_inventory USING booking_id = create_booking.id TIMEOUT 3000
+  END
+
+  STEP send_confirmation USING booking_id = create_booking.id RETRY 2
+
+END
+
+-- Cancellation, branching on whether the booking was already paid for.
+--
+-- cancel_booking is CONFIRM-gated, so this workflow pauses at that step and
+-- emits workflow.paused. The caller completes it through POST /workflows/resume,
+-- and the step's RETRY and TIMEOUT are carried through the resume rather than
+-- being dropped.
+WORKFLOW BookingCancellation
+
+  STEP cancel_booking
+
+  IF cancel_booking.total_cents
+    STEP refund_booking USING booking_id = cancel_booking.id RETRY 3 TIMEOUT 8000
+  ELSE
+    STEP send_confirmation USING booking_id = cancel_booking.id
+  END
+
+END
+
+-- Multi-way dispatch on a value returned by the backend.
+--
+-- SWITCH compares stringified, so CASE 2 matches a numeric 2 arriving as JSON.
+-- No match and no DEFAULT is a runtime error rather than silent fall-through --
+-- "possibly nothing" is spelled DEFAULT with an empty body.
+WORKFLOW PostStayFollowUp
+
+  STEP create_booking
+
+  SWITCH create_booking.status
+    CASE "completed"
+      STEP send_confirmation USING booking_id = create_booking.id
+    CASE "cancelled"
+      STEP refund_booking USING booking_id = create_booking.id
+    DEFAULT
+      WAIT 1000
+  END
+
+END

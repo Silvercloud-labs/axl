@@ -1,0 +1,50 @@
+{
+  "Action": {
+    "scope": "flow",
+    "prefix": "action",
+    "description": "Scaffold a new ACTION block",
+    "body": [
+      "ACTION ${1:action_name}",
+      "",
+      "DESC \"${2:Description of this action}\"",
+      "",
+      "INPUT",
+      "${3:field_name} : ${4:String} ${5|REQUIRED,OPTIONAL|}",
+      "",
+      "OUTPUT ${6:String}",
+      "",
+      "ENDPOINT ${7|GET,POST,PUT,PATCH,DELETE|} ${8:/path}"
+    ]
+  },
+  "Entity": {
+    "scope": "flow",
+    "prefix": "entity",
+    "description": "Scaffold a new ENTITY block",
+    "body": [
+      "ENTITY ${1:EntityName}",
+      "",
+      "id   : String",
+      "${2:name} : ${3:String}",
+      "${4:field} : ${5:String}"
+    ]
+  },
+  "Workflow": {
+    "scope": "flow",
+    "prefix": "workflow",
+    "description": "Scaffold a new WORKFLOW block",
+    "body": [
+      "WORKFLOW ${1:WorkflowName}",
+      "",
+      "STEP ${2:action_name}",
+      "STEP ${3:action_name}"
+    ]
+  },
+  "Permission": {
+    "scope": "flow",
+    "prefix": "permission",
+    "description": "Add a PERMISSION line",
+    "body": [
+      "PERMISSION ${1:action_name} ${2|PUBLIC,AUTH|}"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+-- actions.flow
+-- Mutating capabilities. Each becomes POST /actions/<name> over REST and an MCP
+-- tool with a typed schema built from its INPUT block.
+--
+-- OUTPUT is mandatory. An action that returns nothing declares OUTPUT Null.
+-- The trailing DESC on an input line is carried into the MCP tool schema, so a
+-- calling model sees what each parameter means rather than only its type.
+
+ACTION search_hotels
+  DESC "Search bookable hotels by city"
+  INPUT
+    city     : String REQUIRED DESC "City name, e.g. Hyderabad"
+    min_rating : Float OPTIONAL DESC "Only return hotels rated at or above this"
+  OUTPUT List<Hotel>
+  ENDPOINT GET /hotels
+
+ACTION list_rooms
+  DESC "List the rooms of one hotel"
+  INPUT
+    hotel_id : String REQUIRED DESC "ID of the hotel to list rooms for"
+  OUTPUT List<Room>
+  ENDPOINT GET /hotels/{hotel_id}/rooms
+
+ACTION register
+  DESC "Register a new guest account"
+  INPUT
+    name  : String REQUIRED DESC "Guest's full name"
+    email : String REQUIRED DESC "Email address, used to sign in"
+  OUTPUT User
+  ENDPOINT POST /users
+  EVENT GuestRegistered
+
+ACTION create_booking
+  DESC "Reserve a room for a date range"
+  INPUT
+    room_id   : String REQUIRED DESC "ID of the room to reserve"
+    check_in  : String REQUIRED DESC "ISO-8601 date, e.g. 2026-09-01"
+    check_out : String REQUIRED DESC "ISO-8601 date, e.g. 2026-09-04"
+  OUTPUT Booking
+  ENDPOINT POST /bookings
+  EVENT BookingCreated
+
+ACTION charge_booking
+  DESC "Charge the card on file for a booking"
+  INPUT
+    booking_id : String REQUIRED DESC "ID of the booking to charge"
+  OUTPUT Payment
+  ENDPOINT POST /bookings/{booking_id}/payments
+  EVENT PaymentCaptured
+  SIDE_EFFECTS "Charges the guest's saved payment method and emails a receipt"
+
+ACTION reserve_inventory
+  DESC "Hold the room in the inventory system for this booking"
+  INPUT
+    booking_id : String REQUIRED DESC "ID of the booking holding the room"
+  OUTPUT Room
+  ENDPOINT POST /bookings/{booking_id}/inventory
+
+ACTION send_confirmation
+  DESC "Email the guest their booking confirmation"
+  INPUT
+    booking_id : String REQUIRED DESC "ID of the confirmed booking"
+  OUTPUT Null
+  ENDPOINT POST /bookings/{booking_id}/confirmation
+  SIDE_EFFECTS "Sends an email to the guest"
+
+ACTION cancel_booking
+  DESC "Cancel a booking and release the room"
+  INPUT
+    booking_id : String REQUIRED DESC "ID of the booking to cancel"
+  OUTPUT Booking
+  ENDPOINT DELETE /bookings/{booking_id}
+  EVENT BookingCancelled
+  IRREVERSIBLE true
+  EFFECTS "Releases the room back to inventory and voids the reservation"
+
+ACTION refund_booking
+  DESC "Refund a cancelled booking to the original payment method"
+  INPUT
+    booking_id : String REQUIRED DESC "ID of the cancelled booking to refund"
+  OUTPUT Refund
+  ENDPOINT POST /bookings/{booking_id}/refund
+  IRREVERSIBLE true
+  EFFECTS "Moves money back to the guest; cannot be reversed from AXL"
+
+ACTION close_hotel
+  DESC "Take a hotel off the platform"
+  INPUT
+    hotel_id : String REQUIRED DESC "ID of the hotel to delist"
+  OUTPUT Null
+  ENDPOINT DELETE /hotels/{hotel_id}
+  IRREVERSIBLE true
+  EFFECTS "Delists the hotel and cancels every future booking against it"
+
+ACTION update_profile
+  DESC "Update a guest's own profile"
+  INPUT
+    user_id : String REQUIRED DESC "ID of the account being edited"
+    name    : String OPTIONAL DESC "Replacement display name"
+  OUTPUT User
+  ENDPOINT PATCH /users/{user_id}

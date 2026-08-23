@@ -1,0 +1,2 @@
+PERMISSION create_booking : AUTH
+PERMISSION get_booking : PUBLIC

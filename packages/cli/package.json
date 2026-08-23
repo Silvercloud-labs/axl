@@ -1,0 +1,56 @@
+{
+  "name": "scl-axl",
+  "version": "1.7.0",
+  "description": "AXL command-line interface — compile, validate, doctor, init",
+  "keywords": [
+    "axl",
+    "scl",
+    "cli",
+    "compiler",
+    "ai",
+    "mcp",
+    "dsl"
+  ],
+  "author": "Silvercloud Labs",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silvercloud-labs/axl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Silvercloud-labs/axl/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "axl": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "!dist/**/*.map",
+    "!dist/*.tsbuildinfo",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsc && npm run bundle",
+    "bundle": "esbuild index.ts --bundle --platform=node --format=esm --outfile=dist/index.js --allow-overwrite --external:prompts --external:chokidar --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\""
+  },
+  "dependencies": {
+    "@readme/openapi-parser": "^7.0.0",
+    "chalk": "^5.6.2",
+    "chokidar": "^5.0.0",
+    "log-update": "^6.1.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@axl/compiler": "1.7.0",
+    "@axl/generators": "1.7.0",
+    "@types/prompts": "^2.4.9",
+    "esbuild": "^0.25.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

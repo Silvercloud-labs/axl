@@ -1,0 +1,497 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "AXL Flow",
+  "scopeName": "source.flow",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#declarations"
+    },
+    {
+      "include": "#branch-conditions"
+    },
+    {
+      "include": "#step-references"
+    },
+    {
+      "include": "#auth-rules"
+    },
+    {
+      "include": "#endpoint"
+    },
+    {
+      "include": "#event"
+    },
+    {
+      "include": "#consequence"
+    },
+    {
+      "include": "#output"
+    },
+    {
+      "include": "#field"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#versions"
+    },
+    {
+      "include": "#rate-limit-value"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#keywords-declaration"
+    },
+    {
+      "include": "#keywords-control"
+    },
+    {
+      "include": "#keywords-section"
+    },
+    {
+      "include": "#keywords-modifier"
+    },
+    {
+      "include": "#keywords-permission"
+    },
+    {
+      "include": "#keywords-http"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#punctuation"
+    },
+    {
+      "include": "#identifiers"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "name": "comment.line.double-dash.flow",
+      "match": "--.*$"
+    },
+    "strings": {
+      "name": "string.quoted.double.flow",
+      "begin": "\"",
+      "end": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.flow"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.flow"
+        }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.flow",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "_comment_declarations": "Names the thing being declared, so a declaration reads differently from a reference. This is the single biggest reason .flow used to look flat next to a mainstream language: every identifier fell through to variable.other and got one colour.",
+    "declarations": {
+      "patterns": [
+        {
+          "match": "^\\s*(APP)\\s+([A-Za-z_][A-Za-z0-9_-]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.app.flow"
+            },
+            "2": {
+              "name": "entity.name.namespace.flow"
+            }
+          }
+        },
+        {
+          "match": "^\\s*(ENTITY)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.entity.flow"
+            },
+            "2": {
+              "name": "entity.name.type.flow"
+            }
+          }
+        },
+        {
+          "match": "^\\s*(ACTION)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.action.flow"
+            },
+            "2": {
+              "name": "entity.name.function.flow"
+            }
+          }
+        },
+        {
+          "match": "^\\s*(RESOURCE)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.resource.flow"
+            },
+            "2": {
+              "name": "entity.name.function.resource.flow"
+            }
+          }
+        },
+        {
+          "match": "^\\s*(WORKFLOW)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.workflow.flow"
+            },
+            "2": {
+              "name": "entity.name.type.workflow.flow"
+            }
+          }
+        }
+      ]
+    },
+    "_comment_step": "STEP names an action, and USING binds one step's output into the next. Scoping the reference and the `step.field` path separately is what makes a workflow readable at a glance.",
+    "step-references": {
+      "patterns": [
+        {
+          "match": "\\b(STEP)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.control.step.flow"
+            },
+            "2": {
+              "name": "entity.name.function.flow"
+            }
+          }
+        },
+        {
+          "match": "\\b(USING)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*(=)\\s*([A-Za-z_][A-Za-z0-9_]*)(\\.)([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.control.using.flow"
+            },
+            "2": {
+              "name": "variable.parameter.flow"
+            },
+            "3": {
+              "name": "keyword.operator.assignment.flow"
+            },
+            "4": {
+              "name": "entity.name.function.flow"
+            },
+            "5": {
+              "name": "punctuation.accessor.flow"
+            },
+            "6": {
+              "name": "variable.other.property.flow"
+            }
+          }
+        },
+        {
+          "match": "\\b(RETRY|TIMEOUT|WAIT)\\s+([0-9]+)",
+          "captures": {
+            "1": {
+              "name": "keyword.control.modifier.flow"
+            },
+            "2": {
+              "name": "constant.numeric.flow"
+            }
+          }
+        }
+      ]
+    },
+    "_comment_auth": "PERMISSION / CONFIRM / RATE_LIMIT all reference a capability by bare name, then take a level. ROLE and OWNER carry an argument that is neither a keyword nor a type.",
+    "auth-rules": {
+      "patterns": [
+        {
+          "match": "^\\s*(PERMISSION)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*(:)\\s*(ROLE|OWNER)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "keyword.other.auth.flow"
+            },
+            "2": {
+              "name": "entity.name.function.flow"
+            },
+            "3": {
+              "name": "punctuation.separator.colon.flow"
+            },
+            "4": {
+              "name": "storage.modifier.permission.flow"
+            },
+            "5": {
+              "name": "variable.other.constant.flow"
+            }
+          }
+        },
+        {
+          "match": "^\\s*(PERMISSION)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*(:)\\s*(PUBLIC|AUTH)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.other.auth.flow"
+            },
+            "2": {
+              "name": "entity.name.function.flow"
+            },
+            "3": {
+              "name": "punctuation.separator.colon.flow"
+            },
+            "4": {
+              "name": "constant.language.permission.flow"
+            }
+          }
+        },
+        {
+          "match": "^\\s*(CONFIRM)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*(:)\\s*(OTP)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.other.auth.flow"
+            },
+            "2": {
+              "name": "entity.name.function.flow"
+            },
+            "3": {
+              "name": "punctuation.separator.colon.flow"
+            },
+            "4": {
+              "name": "constant.language.confirm.flow"
+            }
+          }
+        },
+        {
+          "match": "^\\s*(RATE_LIMIT)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*(:)",
+          "captures": {
+            "1": {
+              "name": "keyword.other.auth.flow"
+            },
+            "2": {
+              "name": "entity.name.function.flow"
+            },
+            "3": {
+              "name": "punctuation.separator.colon.flow"
+            }
+          }
+        }
+      ]
+    },
+    "_comment_rate_limit": "Only sec, min, hr and day are enforced. Highlighting the unit as a keyword makes a wrong one (100/hour) visibly not-a-keyword before the compiler ever reports AXL388.",
+    "rate-limit-value": {
+      "match": "\\b([0-9]+)(/)(sec|min|hr|day)\\b",
+      "captures": {
+        "1": {
+          "name": "constant.numeric.flow"
+        },
+        "2": {
+          "name": "punctuation.separator.slash.flow"
+        },
+        "3": {
+          "name": "keyword.other.unit.flow"
+        }
+      }
+    },
+    "_comment_endpoint": "The path is data, not code, and {placeholders} bind to inputs \u2014 worth separating from the surrounding path text.",
+    "endpoint": {
+      "begin": "\\b(ENDPOINT)\\s+(GET|POST|PUT|PATCH|DELETE)\\s+",
+      "end": "$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.endpoint.flow"
+        },
+        "2": {
+          "name": "keyword.operator.http.flow"
+        }
+      },
+      "patterns": [
+        {
+          "match": "\\{([A-Za-z_][A-Za-z0-9_]*)\\}",
+          "captures": {
+            "0": {
+              "name": "meta.embedded.placeholder.flow"
+            },
+            "1": {
+              "name": "variable.parameter.path.flow"
+            }
+          }
+        },
+        {
+          "name": "comment.line.double-dash.flow",
+          "match": "--.*$"
+        },
+        {
+          "name": "string.unquoted.path.flow",
+          "match": "[^\\s{}]+"
+        }
+      ]
+    },
+    "event": {
+      "match": "\\b(EVENT)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.event.flow"
+        },
+        "2": {
+          "name": "entity.name.type.event.flow"
+        }
+      }
+    },
+    "_comment_consequence": "IRREVERSIBLE takes a bare true/false and nothing else; giving it constant.language makes a stray string look wrong on sight.",
+    "consequence": {
+      "patterns": [
+        {
+          "match": "\\b(IRREVERSIBLE)\\s+(true|false)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.other.consequence.flow"
+            },
+            "2": {
+              "name": "constant.language.boolean.flow"
+            }
+          }
+        },
+        {
+          "name": "keyword.other.consequence.flow",
+          "match": "\\b(IRREVERSIBLE|EFFECTS|SIDE_EFFECTS)\\b"
+        }
+      ]
+    },
+    "_comment_field": "`name : Type REQUIRED` in an ENTITY or INPUT block. The field name is a parameter, not a free identifier.",
+    "field": {
+      "match": "^\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(:)\\s*(List)?\\s*(<)?\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(>)?",
+      "captures": {
+        "1": {
+          "name": "variable.parameter.flow"
+        },
+        "2": {
+          "name": "punctuation.separator.colon.flow"
+        },
+        "3": {
+          "name": "support.type.generic.flow"
+        },
+        "4": {
+          "name": "punctuation.bracket.angle.flow"
+        },
+        "5": {
+          "name": "support.type.flow"
+        },
+        "6": {
+          "name": "punctuation.bracket.angle.flow"
+        }
+      }
+    },
+    "keywords-declaration": {
+      "name": "keyword.declaration.flow",
+      "match": "\\b(APP|ENTITY|ACTION|RESOURCE|WORKFLOW|RELATION|GENERATORS)\\b"
+    },
+    "_comment_control": "Every one of these was missing from the grammar before 1.5.0 \u2014 the whole control-flow surface rendered as plain text.",
+    "keywords-control": {
+      "name": "keyword.control.flow",
+      "match": "\\b(STEP|END|IF|ELSE|SWITCH|CASE|DEFAULT|PARALLEL|USING|RETRY|TIMEOUT|WAIT)\\b"
+    },
+    "keywords-section": {
+      "name": "keyword.other.flow",
+      "match": "\\b(NAME|VERSION|DESCRIPTION|FRAMEWORK|LANGUAGE|DATABASE|BASE_URL|DESC|INPUT|OUTPUT|ENDPOINT|EVENT|PERMISSION|CONFIRM|RATE_LIMIT|IRREVERSIBLE|EFFECTS|SIDE_EFFECTS)\\b"
+    },
+    "keywords-modifier": {
+      "name": "storage.modifier.flow",
+      "match": "\\b(REQUIRED|OPTIONAL)\\b"
+    },
+    "keywords-permission": {
+      "name": "constant.language.flow",
+      "match": "\\b(PUBLIC|AUTH|ROLE|OWNER|OTP)\\b"
+    },
+    "keywords-http": {
+      "name": "keyword.operator.http.flow",
+      "match": "\\b(GET|POST|PUT|PATCH|DELETE)\\b"
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "support.type.primitive.flow",
+          "match": "\\b(String|Number|Float|Boolean|Null)\\b"
+        },
+        {
+          "name": "support.type.generic.flow",
+          "match": "\\b(List)\\b"
+        }
+      ]
+    },
+    "versions": {
+      "name": "constant.numeric.version.flow",
+      "match": "\\b[0-9]+\\.[0-9]+\\.[0-9]+\\b"
+    },
+    "numbers": {
+      "name": "constant.numeric.flow",
+      "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.colon.flow",
+          "match": ":"
+        },
+        {
+          "name": "punctuation.bracket.angle.flow",
+          "match": "[<>]"
+        },
+        {
+          "name": "punctuation.separator.slash.flow",
+          "match": "/"
+        }
+      ]
+    },
+    "identifiers": {
+      "name": "variable.other.flow",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+    },
+    "output": {
+      "_comment": "OUTPUT names a type, not a value. Without this the entity in `OUTPUT List<Hotel>` fell through to the generic identifier rule and lost its type colour.",
+      "match": "\\b(OUTPUT)\\s+(?:(List)\\s*(<)\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(>)|([A-Za-z_][A-Za-z0-9_]*))",
+      "captures": {
+        "1": {
+          "name": "keyword.other.flow"
+        },
+        "2": {
+          "name": "support.type.generic.flow"
+        },
+        "3": {
+          "name": "punctuation.bracket.angle.flow"
+        },
+        "4": {
+          "name": "support.type.flow"
+        },
+        "5": {
+          "name": "punctuation.bracket.angle.flow"
+        },
+        "6": {
+          "name": "support.type.flow"
+        }
+      }
+    },
+    "branch-conditions": {
+      "_comment": "IF and SWITCH read a step's output field. Without this the operands fell through to the generic identifier rule and the accessor dot got no scope at all.",
+      "match": "\\b(IF|SWITCH)\\s+([A-Za-z_][A-Za-z0-9_]*)(\\.)([A-Za-z_][A-Za-z0-9_]*)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.conditional.flow"
+        },
+        "2": {
+          "name": "entity.name.function.flow"
+        },
+        "3": {
+          "name": "punctuation.accessor.flow"
+        },
+        "4": {
+          "name": "variable.other.property.flow"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  // packages/runtime is plain ESM JavaScript with no build step, so it is absent from the
+  // project references in tsconfig.json -- which meant the entire shipped runtime, the code
+  // that actually serves requests, was never type-checked by anything.
+  //
+  // checkJs over the real sources, with `strict` off. Strict mode on untyped JS reports
+  // hundreds of implicit-any parameters and says nothing about correctness; without it,
+  // tsc still catches the errors that matter here -- a typo'd property, a call with the
+  // wrong arity, an undefined import, a misused built-in.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["packages/runtime/*.js"],
+  "exclude": ["node_modules"]
+}

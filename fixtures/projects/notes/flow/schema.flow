@@ -1,0 +1,6 @@
+-- schema.flow
+
+ENTITY Note
+  id: String
+  title: String
+  content: String

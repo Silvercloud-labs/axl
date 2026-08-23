@@ -1,0 +1,21 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.md]
+# Trailing whitespace is a hard line break in Markdown.
+trim_trailing_whitespace = false
+
+[*.flow]
+# Indentation in .flow is aesthetic, not syntactic, but two spaces is the style
+# `axl format` produces.
+indent_size = 2
+
+[Makefile]
+indent_style = tab

@@ -1,0 +1,42 @@
+{
+  "name": "@axl/compiler",
+  "version": "1.7.0",
+  "description": "AXL language compiler — lexer, parser, validator, and manifest generator",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/__tests__",
+    "LICENSE",
+    "!dist/**/*.map",
+    "!dist/*.tsbuildinfo",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Silvercloud Labs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silvercloud-labs/axl.git",
+    "directory": "packages/compiler"
+  },
+  "bugs": {
+    "url": "https://github.com/Silvercloud-labs/axl/issues"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

@@ -1,0 +1,69 @@
+-- actions.flow
+
+ACTION list_projects
+
+DESC "List all projects"
+
+OUTPUT List<Project>
+
+ENDPOINT GET /projects
+
+ACTION create_project
+
+DESC "Create a project"
+
+INPUT
+name : String REQUIRED DESC "Human-readable project name, shown in project lists"
+
+OUTPUT Project
+
+ENDPOINT POST /projects
+
+ACTION list_tasks
+
+DESC "List project tasks"
+
+INPUT
+project_id : String REQUIRED DESC "ID of the project whose tasks to list"
+status : String OPTIONAL DESC "Filter to one status: todo, in_progress or done"
+
+OUTPUT List<Task>
+
+ENDPOINT GET /projects/{project_id}/tasks
+
+  ACTION create_task
+
+  DESC "Create task"
+
+  INPUT
+  project_id : String REQUIRED DESC "ID of the project the task belongs to"
+  title : String REQUIRED DESC "Short headline shown in task lists"
+  status : String OPTIONAL DESC "Initial status: todo, in_progress or done. Defaults to todo"
+  due_date : String OPTIONAL DESC "Due date as an ISO-8601 date, e.g. 2026-08-31"
+
+  OUTPUT Task
+
+ENDPOINT POST /projects/{project_id}/tasks
+
+  ACTION update_task_status
+
+  DESC "Update task status"
+
+  INPUT
+  task_id : String REQUIRED DESC "ID of the task to update"
+  status : String REQUIRED DESC "New status: todo, in_progress or done"
+
+  OUTPUT Task
+
+ENDPOINT PATCH /tasks/{task_id}
+
+  ACTION delete_task
+
+  DESC "Delete task"
+
+  INPUT
+  task_id : String REQUIRED DESC "ID of the task to delete. This is irreversible"
+
+  OUTPUT Null
+
+ENDPOINT DELETE /tasks/{task_id}

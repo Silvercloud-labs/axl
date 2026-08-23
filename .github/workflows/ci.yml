@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  # Not filtered to main: release-prep work happens on stacked branches, and a PR
+  # into one of those needs the same gate as a PR into main.
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Least privilege. Without this block a job inherits the repository default, which on many
+# repositories is write access to contents, packages, issues and pull requests -- scope this
+# workflow has no use for, handed to every dependency it installs.
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 20.19 is the real floor: chokidar@5, a CLI dependency, declares
+        # engines.node ">= 20.19.0". 22.x is what most contributors run.
+        node-version: ["20.19", "22.x"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      # ci, not install: it installs exactly what package-lock.json pins and fails
+      # on a lockfile that has drifted, which is the point of running it here.
+      - run: npm ci
+
+      - run: npm run build
+
+      # --no-file-parallelism is required, not a preference. Several suites bind
+      # fixed ports; run in parallel they collide and produce EADDRINUSE failures
+      # that look like real regressions.
+      - run: npx vitest run --no-file-parallelism
+
+      # An example that does not compile is the first thing a newcomer hits.
+      - run: npm run examples:compile
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          cache: npm
+      - run: npm ci
+      # Fails on high and critical only. Failing on `low` turns a green build into a
+      # coin flip on transitive-dependency churn, and a check that fails at that rate
+      # only teaches people to ignore it.
+      - run: npm audit --audit-level=high
+
+  packaging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:packaging

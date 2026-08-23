@@ -1,0 +1,11 @@
+-- schema.flow
+
+ENTITY Cart
+  id : String
+  item_count : Number
+  total : Float
+
+ENTITY Profile
+  id : String
+  email : String
+  display_name : String

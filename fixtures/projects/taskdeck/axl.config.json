@@ -1,0 +1,6 @@
+{
+  "name": "taskdeck-fixture",
+  "flowDir": "./flow",
+  "outDir": "./build",
+  "generatedDir": "./generated"
+}

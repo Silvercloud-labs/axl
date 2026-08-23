@@ -1,0 +1,24 @@
+-- actions.flow
+
+ACTION add_to_cart
+  DESC "Add an item to the shopping cart"
+  INPUT
+    sku : String REQUIRED DESC "Stock-keeping unit of the item to add"
+  OUTPUT Cart
+  ENDPOINT POST /cart/items
+  EVENT ItemAddedToCart
+
+ACTION refund_order
+  DESC "Refund an order — staff only"
+  INPUT
+    order_id : String REQUIRED DESC "Order to refund"
+  OUTPUT Null
+  ENDPOINT POST /orders/refund
+
+ACTION update_profile
+  DESC "Update your own profile"
+  INPUT
+    user_id : String REQUIRED DESC "The profile owner's id — must be your own"
+    display_name : String REQUIRED DESC "New display name"
+  OUTPUT Profile
+  ENDPOINT POST /profile

@@ -1,0 +1,7 @@
+-- auth.flow
+
+PERMISSION list_notes : PUBLIC
+PERMISSION create_note : AUTH
+PERMISSION delete_note : AUTH
+
+CONFIRM delete_note : OTP

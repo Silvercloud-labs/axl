@@ -1,0 +1,5 @@
+# AXL
+build/
+generated/
+node_modules/
+*.log

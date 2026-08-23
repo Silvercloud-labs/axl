@@ -1,0 +1,17 @@
+-- app.flow
+
+APP Storefront
+
+NAME "Storefront"
+
+VERSION 1.0.0
+
+DESCRIPTION "Read-only resource coverage for the RESOURCE primitive"
+
+FRAMEWORK Express
+
+LANGUAGE JavaScript
+
+DATABASE PostgreSQL
+
+BASE_URL http://localhost:4100/api

@@ -1,0 +1,6 @@
+{
+  "name": "bananazon",
+  "flowDir": "./flow",
+  "outDir": "./build",
+  "generatedDir": "./generated"
+}

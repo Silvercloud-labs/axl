@@ -1,0 +1,14 @@
+ACTION create_booking
+  DESC "Create booking"
+  INPUT
+    userId : String REQUIRED
+    date : String REQUIRED
+  OUTPUT Booking
+  ENDPOINT POST /bookings
+
+ACTION get_booking
+  DESC "Get booking"
+  INPUT
+    id : String REQUIRED
+  OUTPUT Booking
+  ENDPOINT GET /bookings/{id}

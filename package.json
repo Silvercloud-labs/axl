@@ -1,0 +1,51 @@
+{
+  "name": "axl-monorepo",
+  "private": true,
+  "type": "module",
+  "version": "1.7.0",
+  "description": "AXL — AI-native application specification language and compiler",
+  "workspaces": [
+    "packages/compiler",
+    "packages/runtime",
+    "packages/cli",
+    "packages/generators",
+    "packages/vscode"
+  ],
+  "scripts": {
+    "axl": "tsx packages/cli/index.ts",
+    "build": "tsc --build && npm run typecheck:runtime && npm run build --workspace=scl-axl && npm run build --workspace=axl-flow",
+    "examples:compile": "node scripts/compile-examples.js",
+    "package:vscode": "npm run package -w packages/vscode",
+    "test": "vitest run --no-file-parallelism",
+    "test:packaging": "node scripts/test-packaging.js",
+    "test:watch": "vitest --no-file-parallelism",
+    "typecheck:runtime": "tsc -p tsconfig.runtime.json"
+  },
+  "keywords": [
+    "axl",
+    "dsl",
+    "compiler",
+    "mcp",
+    "ai"
+  ],
+  "author": "Silvercloud Labs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "express": "^5.2.1",
+    "ws": "^8.21.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.15.0",
+    "@types/ws": "^8.18.1",
+    "esbuild": "^0.28.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

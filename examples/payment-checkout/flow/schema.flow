@@ -1,0 +1,22 @@
+ENTITY Product
+  id : String
+  name : String
+  price : Number
+
+ENTITY CartResponse
+  cart_id : String
+
+ENTITY OrderResponse
+  orderId : String
+
+ENTITY PaymentLinkResponse
+  paymentUrl : String
+  paymentId : String
+  expiresAt : String
+
+ENTITY VerifyPaymentResponse
+  paymentId : String
+  status : String
+
+ENTITY PlaceOrderResponse
+  success : Boolean

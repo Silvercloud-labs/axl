@@ -1,0 +1,9 @@
+# Normalise line endings in the repository and on checkout. `axl format` and the tests
+# that compare compiler output against expected text both work on exact strings, so a
+# CRLF checkout produces failures that look like formatter bugs.
+* text=auto eol=lf
+
+# Never touched by normalisation.
+*.png   binary
+*.jpg   binary
+*.vsix  binary

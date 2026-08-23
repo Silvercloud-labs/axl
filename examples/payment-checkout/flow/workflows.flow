@@ -1,0 +1,10 @@
+WORKFLOW Purchase
+
+  STEP search_product
+  STEP add_to_cart USING product_id = search_product.id
+  STEP checkout USING cart_id = add_to_cart.cart_id
+  STEP create_payment_link USING order_id = checkout.orderId
+  STEP verify_payment USING payment_id = create_payment_link.paymentId
+  STEP place_order USING payment_id = verify_payment.paymentId
+
+END

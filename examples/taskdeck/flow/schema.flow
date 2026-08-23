@@ -1,0 +1,15 @@
+-- schema.flow
+
+ENTITY Project
+
+id         : String
+name       : String
+task_count : Number
+
+ENTITY Task
+
+id         : String
+project_id : String
+title      : String
+status     : String
+due_date   : String

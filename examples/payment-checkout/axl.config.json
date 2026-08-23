@@ -1,0 +1,6 @@
+{
+  "name": "payment-checkout",
+  "flowDir": "./flow",
+  "outDir": "./build",
+  "generatedDir": "./generated"
+}

@@ -1,0 +1,83 @@
+name: Bug report
+description: Something in the compiler, runtime or CLI does not behave as documented
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A minimal reproduction is worth more than a detailed description of one.
+
+        **Do not report security vulnerabilities here.** Use
+        [private advisories](https://github.com/Silvercloud-labs/axl/security/advisories/new)
+        instead — see [SECURITY.md](../blob/main/SECURITY.md).
+
+  - type: input
+    id: version
+    attributes:
+      label: AXL version
+      description: Output of `axl --version`
+      placeholder: axl 1.5.0
+    validations:
+      required: true
+
+  - type: input
+    id: node
+    attributes:
+      label: Node version
+      description: Output of `node --version`
+      placeholder: v22.11.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Compiler (lexer, parser, validator)
+        - Runtime engine
+        - REST adapter
+        - MCP adapter
+        - WebSocket / events
+        - CLI
+        - VS Code extension
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: >
+        The smallest `.flow` project or command sequence that triggers it.
+        Paste the `.flow` files inline if they are short.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened
+      description: Real terminal output, not a paraphrase.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: flags
+    attributes:
+      label: Non-default configuration
+      description: >
+        Any flags or environment variables in play — `--host`, `--trust-proxy`,
+        `--trust-identity-headers`, `AXL_*`. Write "none" if there are none.
+    validations:
+      required: true

@@ -1,0 +1,9 @@
+-- auth.flow
+
+PERMISSION search_product : PUBLIC
+PERMISSION add_to_cart : AUTH
+PERMISSION checkout : AUTH
+
+CONFIRM checkout : OTP
+
+RATE_LIMIT checkout : 5/min

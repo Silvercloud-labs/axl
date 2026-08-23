@@ -1,0 +1,255 @@
+openapi: 3.0.3
+info:
+  title: Bookstore API
+  version: 2.4.1
+  description: >
+    A representative multi-resource API used to exercise the OpenAPI adapter.
+    Covers related entities, the full method spread, operations with and without
+    operationIds, and schemas AXL's type system deliberately cannot represent.
+servers:
+  - url: https://api.bookstore.example.com/v1
+    description: Production
+
+paths:
+  /books:
+    get:
+      operationId: listBooks
+      summary: List books
+      description: Returns every book, optionally filtered.
+      parameters:
+        - name: author_id
+          in: query
+          required: false
+          description: Only return books by this author.
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of books to return.
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: A list of books.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Book"
+    post:
+      operationId: createBook
+      summary: Create a book
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [title, author_id]
+              properties:
+                title:
+                  type: string
+                  description: The book's title.
+                author_id:
+                  type: string
+                  description: Author who wrote it.
+                price:
+                  type: number
+                  description: Retail price.
+                in_print:
+                  type: boolean
+      responses:
+        "201":
+          description: The created book.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Book"
+
+  /books/{bookId}:
+    parameters:
+      - name: bookId
+        in: path
+        required: true
+        description: The book's id.
+        schema:
+          type: string
+    get:
+      operationId: getBook
+      summary: Fetch one book
+      responses:
+        "200":
+          description: The book.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Book"
+    put:
+      operationId: replaceBook
+      summary: Replace a book
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [title]
+              properties:
+                title:
+                  type: string
+                price:
+                  type: number
+      responses:
+        "200":
+          description: The updated book.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Book"
+    delete:
+      operationId: deleteBook
+      summary: Delete a book permanently
+      responses:
+        "204":
+          description: Deleted.
+
+  /authors:
+    get:
+      operationId: listAuthors
+      summary: List authors
+      responses:
+        "200":
+          description: Authors.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Author"
+
+  /authors/{authorId}:
+    get:
+      # No operationId on purpose: exercises the derived-name path.
+      summary: Fetch one author
+      parameters:
+        - name: authorId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The author.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Author"
+
+  /orders:
+    post:
+      operationId: placeOrder
+      summary: Place an order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [book_id, quantity]
+              properties:
+                book_id:
+                  type: string
+                quantity:
+                  type: integer
+                gift_wrap:
+                  type: boolean
+      responses:
+        "201":
+          description: The placed order.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Order"
+
+  /search:
+    get:
+      operationId: search
+      summary: Search across books and authors
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Free-text query.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Mixed results.
+          content:
+            application/json:
+              schema:
+                # Deliberately unmappable: AXL has no union type.
+                $ref: "#/components/schemas/SearchResult"
+
+  /health:
+    get:
+      operationId: healthCheck
+      # No summary or description on purpose: exercises the DESC-TODO path.
+      responses:
+        "200":
+          description: Service is up.
+
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        author_id:
+          type: string
+        price:
+          type: number
+        in_print:
+          type: boolean
+        page_count:
+          type: integer
+
+    Author:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        book_count:
+          type: integer
+
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        book_id:
+          type: string
+        quantity:
+          type: integer
+        placed_at:
+          type: string
+        book:
+          # A relation to another entity.
+          $ref: "#/components/schemas/Book"
+
+    # Deliberately unmappable: a oneOf union has no ENTITY equivalent.
+    SearchResult:
+      oneOf:
+        - $ref: "#/components/schemas/Book"
+        - $ref: "#/components/schemas/Author"
+
+    # Deliberately unmappable: free-form object with no declared properties.
+    Metadata:
+      type: object
+      additionalProperties: true

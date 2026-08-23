@@ -1,0 +1,14 @@
+ACTION create_post
+  DESC "Create a post"
+  INPUT
+    authorId : String REQUIRED
+    content : String REQUIRED
+  OUTPUT Post
+  ENDPOINT POST /posts
+
+ACTION like_post
+  DESC "Like a post"
+  INPUT
+    postId : String REQUIRED
+  OUTPUT Post
+  ENDPOINT POST /posts/{postId}/like

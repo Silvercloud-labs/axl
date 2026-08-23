@@ -1,0 +1,8 @@
+APP social
+NAME "SocialNetwork"
+VERSION 2.1.0
+DESCRIPTION "Connect with friends"
+FRAMEWORK Django
+LANGUAGE Python
+DATABASE PostgreSQL
+BASE_URL https://api.social.example

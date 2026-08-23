@@ -1,0 +1,21 @@
+-- app.flow
+-- AXL Application Definition
+
+APP hotel-booking
+
+NAME "hotel-booking"
+
+VERSION 1.0.0
+
+DESCRIPTION "An AXL-powered application"
+
+FRAMEWORK Express
+
+LANGUAGE TypeScript
+
+DATABASE PostgreSQL
+
+BASE_URL http://localhost:3000/api
+
+GENERATORS
+  DIAGRAM

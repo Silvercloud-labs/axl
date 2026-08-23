@@ -1,0 +1,10 @@
+ENTITY Patient
+  id : String
+  name : String
+  dob : String
+
+ENTITY Appointment
+  id : String
+  patientId : String
+  doctorId : String
+  date : String

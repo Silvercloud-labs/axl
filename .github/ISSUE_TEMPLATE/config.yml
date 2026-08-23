@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/Silvercloud-labs/axl/security/advisories/new
+    about: Report privately. Never open a public issue for a security defect.
+  - name: Language specification
+    url: https://github.com/Silvercloud-labs/axl/blob/main/SPECIFICATION.md
+    about: The formal .flow grammar, validation rules and diagnostic codes.
+  - name: Contributing guide
+    url: https://github.com/Silvercloud-labs/axl/blob/main/CONTRIBUTING.md
+    about: Setup, testing, versioning policy and the pull request process.

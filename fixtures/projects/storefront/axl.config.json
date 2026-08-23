@@ -1,0 +1,6 @@
+{
+  "name": "storefront",
+  "flowDir": "./flow",
+  "outDir": "./build",
+  "generatedDir": "./generated"
+}

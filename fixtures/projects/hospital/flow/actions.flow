@@ -1,0 +1,8 @@
+ACTION schedule_appointment
+  DESC "Schedule an appointment"
+  INPUT
+    patientId : String REQUIRED
+    doctorId : String REQUIRED
+    date : String REQUIRED
+  OUTPUT Appointment
+  ENDPOINT POST /appointments

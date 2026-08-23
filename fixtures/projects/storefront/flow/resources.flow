@@ -1,0 +1,11 @@
+-- resources.flow
+
+RESOURCE cart
+  DESC "The current user's shopping cart, including item count and total"
+  OUTPUT Cart
+  ENDPOINT GET /cart
+
+RESOURCE store_status
+  DESC "Whether the storefront is currently accepting orders"
+  OUTPUT String
+  ENDPOINT GET /status

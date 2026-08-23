@@ -1,0 +1,21 @@
+-- app.flow
+
+APP TaskDeck
+
+NAME "TaskDeck"
+
+VERSION 1.0.0
+
+GENERATORS
+  DIAGRAM
+
+DESCRIPTION "Task & Project Management"
+
+FRAMEWORK Express
+
+LANGUAGE JavaScript
+
+DATABASE PostgreSQL
+
+BASE_URL http://localhost:4000/api
+

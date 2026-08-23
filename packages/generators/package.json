@@ -1,0 +1,37 @@
+{
+  "name": "@axl/generators",
+  "version": "1.7.0",
+  "description": "AXL core generators for AI outputs (MCP, OpenAPI, etc.)",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "!dist/**/*.map",
+    "!dist/*.tsbuildinfo",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@axl/compiler": "1.7.0"
+  },
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Silvercloud Labs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silvercloud-labs/axl.git",
+    "directory": "packages/generators"
+  },
+  "bugs": {
+    "url": "https://github.com/Silvercloud-labs/axl/issues"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

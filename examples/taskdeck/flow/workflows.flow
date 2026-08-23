@@ -1,0 +1,14 @@
+-- workflows.flow
+
+WORKFLOW ProjectCreation
+
+STEP create_project
+
+WORKFLOW TaskLifecycle
+
+STEP create_task
+STEP update_task_status USING task_id = create_task.id
+
+WORKFLOW ProjectDeletion
+
+STEP delete_task

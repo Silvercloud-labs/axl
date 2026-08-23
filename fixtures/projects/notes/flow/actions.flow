@@ -1,0 +1,19 @@
+-- actions.flow
+
+ACTION list_notes
+  ENDPOINT GET /notes
+  OUTPUT List<Note>
+
+ACTION create_note
+  ENDPOINT POST /notes
+  INPUT
+    title: String REQUIRED
+    content: String REQUIRED
+  OUTPUT Note
+
+ACTION delete_note
+  ENDPOINT DELETE /notes/{id}
+  INPUT
+    id: String REQUIRED
+  OUTPUT Null
+

@@ -1,0 +1,43 @@
+-- schema.flow
+-- Data models. Every type named by an INPUT or OUTPUT elsewhere in the project
+-- must resolve to a primitive, a List<T>, or one of these entities.
+
+ENTITY User
+  id    : String
+  name  : String
+  email : String
+  role  : String
+
+ENTITY Hotel
+  id       : String
+  name     : String
+  city     : String
+  rating   : Float
+  featured : Boolean
+
+ENTITY Room
+  id           : String
+  hotel_id     : String
+  room_type    : String
+  price_cents  : Number
+  available    : Boolean
+
+ENTITY Booking
+  id          : String
+  user_id     : String
+  room_id     : String
+  check_in    : String
+  check_out   : String
+  status      : String
+  total_cents : Number
+
+ENTITY Payment
+  id          : String
+  booking_id  : String
+  amount_cents : Number
+  status      : String
+
+ENTITY Refund
+  id         : String
+  booking_id : String
+  amount_cents : Number

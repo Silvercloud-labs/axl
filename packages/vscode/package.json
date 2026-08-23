@@ -1,0 +1,71 @@
+{
+  "name": "axl-flow",
+  "displayName": "AXL Flow Language",
+  "description": "Syntax highlighting, hover tooltips, inline diagnostics, snippets, and format-on-save for the AXL .flow specification language",
+  "version": "1.7.0",
+  "private": true,
+  "publisher": "axl",
+  "icon": "icons/marketplace-icon.png",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silvercloud-labs/axl.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "vscode": "^1.75.0",
+    "node": ">=20.19.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Formatters",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onLanguage:flow"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "flow",
+        "aliases": [
+          "AXL Flow",
+          "flow"
+        ],
+        "extensions": [
+          ".flow"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/flow.svg",
+          "dark": "./icons/flow.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "flow",
+        "scopeName": "source.flow",
+        "path": "./syntaxes/flow.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "flow",
+        "path": "./snippets/flow.code-snippets"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsc --noEmit && npm run bundle",
+    "bundle": "esbuild src/extension.ts --bundle --platform=node --format=cjs --outfile=dist/extension.js --external:vscode --sourcemap",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@axl/compiler": "1.7.0",
+    "@types/vscode": "^1.60.0",
+    "@vscode/vsce": "^3.9.2",
+    "esbuild": "^0.28.1"
+  }
+}

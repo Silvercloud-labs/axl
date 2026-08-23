@@ -1,0 +1,10 @@
+ENTITY Profile
+  id : String
+  username : String
+  bio : String
+
+ENTITY Post
+  id : String
+  authorId : String
+  content : String
+  likes : Number

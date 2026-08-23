@@ -1,0 +1,55 @@
+name: Feature request
+description: Propose a new capability or a change to an existing one
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Open this before writing code. A proposal that arrives as a pull request
+        has usually already made the design decisions that were worth discussing.
+
+        Some things are out of scope by design and will be declined: auth,
+        payments and identity infrastructure are backend concerns, and that
+        boundary is what keeps AXL a compiler rather than a framework. See
+        "What AXL is not" in the [README](../blob/main/README.md).
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: Describe it independently of any solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: existing
+    attributes:
+      label: Why existing primitives cannot express it
+      description: >
+        `ACTION`, `RESOURCE`, `WORKFLOW`, the permission levels, and the
+        control-flow constructs. What did you try?
+    validations:
+      required: true
+
+  - type: textarea
+    id: syntax
+    attributes:
+      label: Proposed syntax
+      description: If it adds `.flow` syntax, write out what it would look like.
+      render: text
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: What it means for compile-time validation
+      description: >
+        AXL's value is that mistakes are caught before runtime. What could the
+        compiler check about this, and what would it have to accept blindly?
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This does not ask AXL to own auth, payments or identity infrastructure
+          required: true

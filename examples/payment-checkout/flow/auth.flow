@@ -1,0 +1,6 @@
+PERMISSION search_product : PUBLIC
+PERMISSION add_to_cart : PUBLIC
+PERMISSION checkout : PUBLIC
+PERMISSION create_payment_link : PUBLIC
+PERMISSION verify_payment : PUBLIC
+PERMISSION place_order : PUBLIC

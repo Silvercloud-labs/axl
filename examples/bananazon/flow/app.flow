@@ -1,0 +1,17 @@
+-- app.flow
+
+APP bananazon
+
+NAME "Bananazon"
+
+VERSION 1.0.0
+
+DESCRIPTION "Modern ecommerce platform"
+
+FRAMEWORK SpringBoot
+
+LANGUAGE Java
+
+DATABASE PostgreSQL
+
+BASE_URL https://api.bananazon.example

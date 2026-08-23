@@ -1,0 +1,35 @@
+# AXL
+build/
+generated/
+node_modules/
+*.log
+dist/
+*.tgz
+.env
+*.env
+*.tsbuildinfo
+
+/test-clean-init/
+/test-express-app/
+/fixtures/projects/bookmark-manager/
+/fixtures/projects/express-app/
+/fixtures/projects/test-init-*/
+/e2e-*/
+/hotel-empty/
+/smoke-test-dir/
+
+# npm pack extraction residue (npm pack + tar -x leaves a package/ dir behind)
+/packages/cli/package/
+
+# Packaged VS Code extension. A release artifact, not source: it belongs on the
+# Marketplace or a GitHub Release. A .vsix is a zip carrying mtimes, so
+# `npm run package:vscode` rewrites it with identical contents but different bytes --
+# tracking it dirtied the tree on every build and cost every clone 752 KB. Build it with
+# `npm run package:vscode`; docs/installation.md walks through installing the result.
+/packages/vscode/*.vsix
+
+# OS metadata. None is tracked today; this keeps it that way.
+.DS_Store
+._*
+Thumbs.db
+desktop.ini

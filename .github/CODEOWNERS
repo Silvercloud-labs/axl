@@ -1,0 +1,8 @@
+# Every change requires a maintainer review by default.
+*       @beyondspeed
+
+# Security posture and the release contract: never merge these unreviewed.
+/SECURITY.md            @beyondspeed
+/SPECIFICATION.md       @beyondspeed
+/packages/runtime/      @beyondspeed
+/.github/workflows/     @beyondspeed

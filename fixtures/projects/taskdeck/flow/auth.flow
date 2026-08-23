@@ -1,0 +1,11 @@
+-- auth.flow
+
+PERMISSION list_projects : AUTH
+PERMISSION create_project : AUTH
+PERMISSION list_tasks : PUBLIC
+PERMISSION create_task : AUTH
+PERMISSION update_task_status : AUTH
+PERMISSION delete_task : AUTH
+
+CONFIRM delete_task : OTP
+RATE_LIMIT list_tasks : 10/min

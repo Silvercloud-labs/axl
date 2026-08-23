@@ -1,0 +1,8 @@
+ENTITY User
+  id : String
+  name : String
+
+ENTITY Booking
+  id : String
+  userId : String
+  date : String
