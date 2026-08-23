@@ -64,8 +64,8 @@
   },
   "devDependencies": {
     "@axl/compiler": "1.7.0",
-    "@types/vscode": "^1.60.0",
+    "@types/vscode": "^1.134.0",
     "@vscode/vsce": "^3.9.2",
-    "esbuild": "^0.28.1"
+    "esbuild": "^0.28.2"
   }
 }
