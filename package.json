@@ -33,15 +33,15 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "express": "^5.2.1",
-    "ws": "^8.21.1",
+    "ws": "^8.21.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^22.15.0",
     "@types/ws": "^8.18.1",
-    "esbuild": "^0.28.1",
-    "tsx": "^4.19.0",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.12",
     "typescript": "^5.8.3",
     "vitest": "^3.2.0"
   },
