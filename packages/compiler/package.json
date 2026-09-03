@@ -1,5 +1,5 @@
 {
-  "name": "@axl/compiler",
+  "name": "@silvercloudlabs/compiler",
   "version": "1.7.0",
   "description": "AXL language compiler — lexer, parser, validator, and manifest generator",
   "type": "module",

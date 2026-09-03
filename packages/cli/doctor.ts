@@ -6,8 +6,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { AXL_PROTOCOL_VERSION } from "@axl/compiler";
-import { GeneratorRegistry } from "@axl/generators";
+import { AXL_PROTOCOL_VERSION } from "@silvercloudlabs/compiler";
+import { GeneratorRegistry } from "@silvercloudlabs/generators";
 import { c, icons, section, blank, table, divider, warn, success } from "./ui.js";
 import { findProjectRoot, loadConfig, resolvePaths } from "./config.js";
 import { staticConformanceChecks, liveConformanceCheck } from "./conformance.js";
@@ -119,7 +119,7 @@ export async function doctor(flowDir: string, options: { conformance?: boolean; 
   // went stale the moment the packages moved to 1.0.0, and a diagnostic command that
   // confidently reports a wrong version is worse than one that reports nothing. The
   // compiler's package version is not knowable here either: the CLI is bundled, so
-  // @axl/compiler is not on disk in a published install. The protocol version is
+  // @silvercloudlabs/compiler is not on disk in a published install. The protocol version is
   // compiled in, always accurate, and is the thing a user debugging a manifest
   // actually needs. Reading the constant is itself proof the compiler package loaded.
   try {

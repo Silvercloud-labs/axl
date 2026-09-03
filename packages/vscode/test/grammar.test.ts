@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { KEYWORDS, PRIMITIVE_TYPES } from "@axl/compiler";
+import { KEYWORDS, PRIMITIVE_TYPES } from "@silvercloudlabs/compiler";
 
 // The grammar drifted 20 keywords behind the language before anyone noticed: RESOURCE,
 // EVENT, IRREVERSIBLE, EFFECTS, SIDE_EFFECTS, ROLE, OWNER and the entire control-flow

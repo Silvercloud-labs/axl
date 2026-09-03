@@ -8,7 +8,7 @@ import { execSync } from "node:child_process";
 import prompts from "prompts";
 import { c, icons, brand, section, stepList, blank, errorMsg, warn } from "./ui.js";
 import { writeConfig, type AxlConfig } from "./config.js";
-import { KEYWORDS } from "@axl/compiler";
+import { KEYWORDS } from "@silvercloudlabs/compiler";
 
 /**
  * The keyword list the generated AGENT.md prints, taken from the compiler.

@@ -2,7 +2,7 @@
 // packages/vscode/src/hover.ts — Pure hover-info lookup (no VS Code deps)
 // ============================================================================
 
-import type { ProjectAST, ActionNode, EntityNode, AppNode, WorkflowNode } from "@axl/compiler";
+import type { ProjectAST, ActionNode, EntityNode, AppNode, WorkflowNode } from "@silvercloudlabs/compiler";
 
 const keywordHovers: Record<string, string> = {
   APP: "**APP**\n\nDefines the application name and configuration.",

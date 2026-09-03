@@ -61,7 +61,7 @@ and open an issue — do not build on a red baseline.
 **Use `npm run build`, not `tsc --noEmit`.** The bare `--noEmit` invocation is a weaker
 gate than `tsc --build` and will pass on code the real build rejects.
 
-**The CLI resolves `@axl/compiler` to its built `dist/`.** Editing compiler source and
+**The CLI resolves `@silvercloudlabs/compiler` to its built `dist/`.** Editing compiler source and
 re-running `npx tsx packages/cli/index.ts` silently exercises the *stale* build. Run
 `npm run build` before testing any compiler change by hand.
 
@@ -77,10 +77,10 @@ in a fresh directory before claiming a packaging fix works.
 
 | Path | Package | Contents |
 |---|---|---|
-| `packages/compiler` | `@axl/compiler` | Lexer, parser, validator, manifest generator |
-| `packages/runtime` | `@axl/runtime` | Execution engine, transport adapters, state stores |
+| `packages/compiler` | `@silvercloudlabs/compiler` | Lexer, parser, validator, manifest generator |
+| `packages/runtime` | `@silvercloudlabs/runtime` | Execution engine, transport adapters, state stores |
 | `packages/cli` | `scl-axl` | The `axl` binary and every subcommand |
-| `packages/generators` | `@axl/generators` | Generator registry and implementations |
+| `packages/generators` | `@silvercloudlabs/generators` | Generator registry and implementations |
 | `packages/vscode` | `axl-flow` | VS Code extension |
 | `examples/` | — | Runnable `.flow` projects. All compile in CI — see [examples/README.md](examples/README.md) |
 | `fixtures/` | — | Inputs owned by the test suite — see [fixtures/README.md](fixtures/README.md) |

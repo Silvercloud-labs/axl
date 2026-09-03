@@ -1,5 +1,5 @@
 {
-  "name": "@axl/runtime",
+  "name": "@silvercloudlabs/runtime",
   "version": "1.7.0",
   "description": "AXL runtime — execution engine, transport adapters, and state stores",
   "keywords": [

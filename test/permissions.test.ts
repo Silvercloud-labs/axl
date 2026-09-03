@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach, beforeAll, afterAll } from
 import { fileURLToPath } from "url";
 import path from "node:path";
 import { execSync } from "node:child_process";
-import { Compiler } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
 // @ts-ignore
 import { AxlEngine, PermissionError } from "../packages/runtime/engine.js";
 // @ts-ignore

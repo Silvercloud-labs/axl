@@ -17,8 +17,8 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { Compiler, DiagnosticSeverity } from "@axl/compiler";
-import { GeneratorRegistry } from "@axl/generators";
+import { Compiler, DiagnosticSeverity } from "@silvercloudlabs/compiler";
+import { GeneratorRegistry } from "@silvercloudlabs/generators";
 
 export interface ConformanceCheck {
   label: string;

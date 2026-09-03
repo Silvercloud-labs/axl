@@ -3,8 +3,8 @@
 // ============================================================================
 
 import { describe, it, expect } from "vitest";
-import { Parser } from "@axl/compiler";
-import type { ProjectAST, AppNode, EntityNode, ActionNode, ResourceNode, WorkflowNode, AuthAST } from "@axl/compiler";
+import { Parser } from "@silvercloudlabs/compiler";
+import type { ProjectAST, AppNode, EntityNode, ActionNode, ResourceNode, WorkflowNode, AuthAST } from "@silvercloudlabs/compiler";
 import { getHoverInfo } from "../src/hover.js";
 
 function buildAST(sources: Record<string, string>): ProjectAST | null {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { Compiler } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
 // @ts-ignore
 import { buildUrl, executeHttpCall } from "../packages/runtime/backend-adapter.js";
 // @ts-ignore

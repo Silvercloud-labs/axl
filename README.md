@@ -209,10 +209,10 @@ npm workspaces monorepo.
 ```
 axl/
 ├── packages/
-│   ├── compiler/     @axl/compiler    lexer, parser, validator, manifest generator
-│   ├── runtime/      @axl/runtime     engine, transport adapters, state stores
+│   ├── compiler/     @silvercloudlabs/compiler    lexer, parser, validator, manifest generator
+│   ├── runtime/      @silvercloudlabs/runtime     engine, transport adapters, state stores
 │   ├── cli/          scl-axl          the `axl` binary and every subcommand
-│   ├── generators/   @axl/generators  generator registry and implementations
+│   ├── generators/   @silvercloudlabs/generators  generator registry and implementations
 │   └── vscode/       axl-flow         VS Code extension
 ├── examples/         runnable .flow projects, all compiled in CI
 ├── fixtures/         inputs owned by the test suite

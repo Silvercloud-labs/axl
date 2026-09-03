@@ -112,19 +112,19 @@ SDK, no migration, no rewrite. Your routes stay exactly as they are.
 ```
 axl/
 ├── packages/
-│   ├── compiler/     @axl/compiler    lexer → parser → validator → manifest generator
-│   ├── runtime/      @axl/runtime     engine, transport adapters, state stores
+│   ├── compiler/     @silvercloudlabs/compiler    lexer → parser → validator → manifest generator
+│   ├── runtime/      @silvercloudlabs/runtime     engine, transport adapters, state stores
 │   ├── cli/          scl-axl          the `axl` binary
-│   ├── generators/   @axl/generators  artifact generators (DIAGRAM)
+│   ├── generators/   @silvercloudlabs/generators  artifact generators (DIAGRAM)
 │   └── vscode/       axl-flow         editor support for .flow
 ```
 
 | Package | Runs | Responsibility |
 |---|---|---|
-| `@axl/compiler` | Build time | Turns `.flow` text into a validated `manifest.json`, or into diagnostics with a file and a line |
-| `@axl/runtime` | Run time | The engine: permissions, validation, gates, rate limits, idempotency, orchestration, events |
+| `@silvercloudlabs/compiler` | Build time | Turns `.flow` text into a validated `manifest.json`, or into diagnostics with a file and a line |
+| `@silvercloudlabs/runtime` | Run time | The engine: permissions, validation, gates, rate limits, idempotency, orchestration, events |
 | `scl-axl` | Both | `axl compile`, `axl serve`, `axl inspect`, and the rest |
-| `@axl/generators` | Build time | Optional artifacts declared with `GENERATORS` |
+| `@silvercloudlabs/generators` | Build time | Optional artifacts declared with `GENERATORS` |
 | `axl-flow` | Your editor | Highlighting, hovers, diagnostics from the real compiler, snippets |
 
 All five version in **lockstep**, so one version number describes the whole toolchain.
