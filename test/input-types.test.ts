@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { z } from "zod";
 import { buildZodShape } from "../packages/runtime/schema-utils.js";
-import { PRIMITIVE_TYPES } from "@axl/compiler";
+import { PRIMITIVE_TYPES } from "@silvercloudlabs/compiler";
 
 // `buildZodShape` handled `number` and `boolean` and sent everything else to `z.string()`.
 // `.flow` accepts five primitives, `List<T>` and any declared ENTITY, so "everything else"

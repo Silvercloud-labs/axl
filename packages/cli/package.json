@@ -1,6 +1,6 @@
 {
   "name": "scl-axl",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "AXL command-line interface — compile, validate, doctor, init",
   "keywords": [
     "axl",
@@ -45,8 +45,8 @@
     "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "@axl/compiler": "1.7.0",
-    "@axl/generators": "1.7.0",
+    "@silvercloudlabs/compiler": "1.7.1",
+    "@silvercloudlabs/generators": "1.7.1",
     "@types/prompts": "^2.4.9",
     "esbuild": "^0.25.0"
   },

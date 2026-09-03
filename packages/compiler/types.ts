@@ -180,7 +180,7 @@ export const RESERVED_GENERATORS = new Set([
 /**
  * Generators that actually exist and will emit files.
  *
- * The compiler cannot import @axl/generators -- that package depends on this one, so
+ * The compiler cannot import @silvercloudlabs/generators -- that package depends on this one, so
  * the dependency would be circular -- hence this default. It is not allowed to drift:
  * the CLI passes the live GeneratorRegistry keys into the Validator, and
  * packages/compiler/__tests__/validator.test.ts asserts this set equals the registry.

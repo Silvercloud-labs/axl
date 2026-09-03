@@ -2,8 +2,8 @@
 // packages/cli/compile.ts — axl compile
 // ============================================================================
 
-import { Compiler, formatDiagnostics, DiagnosticSeverity } from "@axl/compiler";
-import { GeneratorRegistry } from "@axl/generators";
+import { Compiler, formatDiagnostics, DiagnosticSeverity } from "@silvercloudlabs/compiler";
+import { GeneratorRegistry } from "@silvercloudlabs/generators";
 import { c, icons, section, blank, errorBlock, env } from "./ui.js";
 
 export async function compile(flowDir: string, outDir: string): Promise<void> {

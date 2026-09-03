@@ -5,9 +5,9 @@
 import * as vscode from "vscode";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { Parser } from "@axl/compiler";
-import type { ProjectAST, AppNode, EntityNode, ActionNode, ResourceNode, WorkflowNode, AuthAST } from "@axl/compiler";
-import { DiagnosticSeverity } from "@axl/compiler";
+import { Parser } from "@silvercloudlabs/compiler";
+import type { ProjectAST, AppNode, EntityNode, ActionNode, ResourceNode, WorkflowNode, AuthAST } from "@silvercloudlabs/compiler";
+import { DiagnosticSeverity } from "@silvercloudlabs/compiler";
 import { getHoverInfo } from "./hover.js";
 import { getDiagnostics } from "./diagnostics.js";
 import { formatFlowSource } from "./formatter.js";

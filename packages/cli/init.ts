@@ -8,7 +8,7 @@ import { execSync } from "node:child_process";
 import prompts from "prompts";
 import { c, icons, brand, section, stepList, blank, errorMsg, warn } from "./ui.js";
 import { writeConfig, type AxlConfig } from "./config.js";
-import { KEYWORDS } from "@axl/compiler";
+import { KEYWORDS } from "@silvercloudlabs/compiler";
 
 /**
  * The keyword list the generated AGENT.md prints, taken from the compiler.
@@ -206,7 +206,7 @@ node_modules/
 
 const VSCODE_SETTINGS = `{
   "files.associations": {
-    "*.flow": "axl"
+    "*.flow": "flow"
   },
   "editor.tabSize": 2,
   "editor.insertSpaces": true
@@ -369,7 +369,7 @@ export async function init(targetDir: string, skipPrompts = false): Promise<void
       const vscodeDir = path.join(root, ".vscode");
       fs.mkdirSync(vscodeDir, { recursive: true });
       writeIfNew(path.join(vscodeDir, "settings.json"), VSCODE_SETTINGS);
-      vsCodeMsg = "AXL VS Code extension is not yet published.";
+      vsCodeMsg = "Install the AXL Flow VS Code extension (axl-flow) for syntax highlighting and diagnostics — see docs/installation.md.";
     }
 
     const gitignorePath = path.join(root, ".gitignore");

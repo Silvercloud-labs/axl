@@ -20,9 +20,6 @@ npm install -g scl-axl
 
 Requires Node.js 20.19.0 or later.
 
-> Not yet published. Until the first release, install from source — see
-> [docs/installation.md](https://github.com/Silvercloud-labs/axl/blob/main/docs/installation.md).
-
 ## Quick start
 
 ```bash

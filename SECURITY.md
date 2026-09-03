@@ -22,7 +22,7 @@ validated, the call returned `200`, and the backend never received it — so a `
 behaviour depended on an argument silently did the wrong thing. See `1.7.0` in the changelog.
 
 AXL versions in lockstep across all packages, so a supported version number applies
-identically to `scl-axl`, `@axl/compiler`, `@axl/runtime`, `@axl/generators` and `axl-flow`.
+identically to `scl-axl`, `@silvercloudlabs/compiler`, `@silvercloudlabs/runtime`, `@silvercloudlabs/generators` and `axl-flow`.
 
 ---
 

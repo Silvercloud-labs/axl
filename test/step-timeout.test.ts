@@ -4,7 +4,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import type { AddressInfo } from "node:net";
-import { Compiler } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
 // @ts-ignore
 import { AxlEngine, TimeoutError, BackendError } from "../packages/runtime/engine.js";
 // @ts-ignore

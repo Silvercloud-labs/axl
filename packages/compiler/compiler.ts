@@ -71,7 +71,7 @@ export class Compiler {
 
   /**
    * `options.availableGenerators` is how the CLI hands the compiler the live
-   * GeneratorRegistry. The compiler cannot import @axl/generators itself -- that
+   * GeneratorRegistry. The compiler cannot import @silvercloudlabs/generators itself -- that
    * package depends on this one -- so without it the validator falls back to
    * IMPLEMENTED_GENERATORS.
    */

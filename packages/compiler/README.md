@@ -1,4 +1,4 @@
-# @axl/compiler
+# @silvercloudlabs/compiler
 
 The AXL compiler — lexer, parser, validator and manifest generator.
 
@@ -24,7 +24,7 @@ compiler driver.
 ## Usage
 
 ```ts
-import { Compiler } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
 
 const result = new Compiler().compileProject("./flow");
 

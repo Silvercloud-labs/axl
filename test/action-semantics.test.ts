@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
-import { Compiler } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
 // @ts-ignore
 import { buildAxlServer, toolDescription } from "../packages/runtime/axl-server.js";
 // @ts-ignore

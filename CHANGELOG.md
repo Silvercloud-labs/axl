@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.1] — 2026-09-03
+
+First npm release. `scl-axl`, `@silvercloudlabs/compiler`, `@silvercloudlabs/generators`
+and `@silvercloudlabs/runtime` are published; `axl-flow` is distributed as a `.vsix` via
+GitHub Releases pending Visual Studio Marketplace publication.
+
+- **Renamed the npm scope from `@axl` to `@silvercloudlabs`.** The `axl` npm organization
+  name was unavailable at publish time.
+- **Fixed `axl init` scaffolding the wrong VS Code language id.** `VSCODE_SETTINGS` wrote
+  `"*.flow": "axl"`, but the extension registers the language id `"flow"`
+  (`packages/vscode/package.json`). No extension provides an `"axl"` language, so every
+  generated project's own `.vscode/settings.json` silently overrode the extension's
+  grammar with a no-op mapping — `.flow` files stayed unhighlighted even with the
+  extension installed and enabled, requiring manually picking the language every time.
+- Updated `README.md`, `docs/installation.md`, `FAQ.md` and `packages/cli/README.md` to
+  reflect the npm release, replacing the "not yet published" callouts with real install
+  instructions.
+
 ## [1.7.0] — 2026-08-17
 
 Findings from a pre-release audit of the whole repository. Each one below was reproduced

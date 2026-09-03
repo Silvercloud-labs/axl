@@ -1,4 +1,4 @@
-import type { Manifest, ManifestAction } from "@axl/compiler";
+import type { Manifest, ManifestAction } from "@silvercloudlabs/compiler";
 import type { Generator, GeneratedFile } from "./types.js";
 
 // ---------------------------------------------------------------------------
@@ -64,7 +64,7 @@ function generateFlowchart(manifest: Manifest): string {
 
     let stepCounter = 0;
     
-    function processSteps(steps: import("@axl/compiler").ManifestStep[], lastSeen: Record<string, string>): { head: string, tails: string[] } | null {
+    function processSteps(steps: import("@silvercloudlabs/compiler").ManifestStep[], lastSeen: Record<string, string>): { head: string, tails: string[] } | null {
       if (steps.length === 0) return null;
       
       let currentHead: string | null = null;

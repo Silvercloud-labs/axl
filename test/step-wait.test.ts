@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach, beforeAll, afterAll } from
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { Compiler } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
 // @ts-ignore
 import { AxlEngine } from "../packages/runtime/engine.js";
 // @ts-ignore

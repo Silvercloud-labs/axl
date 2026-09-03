@@ -1,4 +1,4 @@
-# @axl/generators
+# @silvercloudlabs/generators
 
 The AXL generator registry.
 
