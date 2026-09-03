@@ -1,4 +1,4 @@
-import type { Manifest } from "@axl/compiler";
+import type { Manifest } from "@silvercloudlabs/compiler";
 
 export interface GeneratedFile {
   path: string; // Relative path, e.g. "mcp/index.ts" or "openapi.yaml"

@@ -3,7 +3,7 @@ import WebSocket from "ws";
 import { fileURLToPath } from "url";
 import path from "node:path";
 import { execSync } from "node:child_process";
-import { Compiler } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
 // @ts-ignore
 import { AxlEngine } from "../packages/runtime/engine.js";
 // @ts-ignore

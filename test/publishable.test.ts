@@ -4,7 +4,7 @@ import path from "node:path";
 import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
-// `@axl/runtime` declared no `dependencies` at all while its shipped .js files import
+// `@silvercloudlabs/runtime` declared no `dependencies` at all while its shipped .js files import
 // express, zod and @modelcontextprotocol/sdk. It worked in-repo only because the root
 // manifest declares them and npm workspaces hoists to the root node_modules -- and there
 // is no root to hoist from on a user's machine. Packed and installed into an empty
@@ -40,12 +40,12 @@ function bareImports(dir: string): Set<string> {
 /** Node builtins that are legal to import without the `node:` prefix. */
 const BUILTINS = new Set(["crypto", "fs", "path", "url", "http", "https", "events", "os", "util", "stream", "zlib", "assert", "child_process"]);
 
-describe("@axl/runtime is installable on its own", () => {
+describe("@silvercloudlabs/runtime is installable on its own", () => {
   const pkg = manifest("packages/runtime");
   const declared = new Set(Object.keys(pkg.dependencies ?? {}));
 
   it("declares dependencies at all", () => {
-    expect(pkg.dependencies, "@axl/runtime has no dependencies field").toBeTruthy();
+    expect(pkg.dependencies, "@silvercloudlabs/runtime has no dependencies field").toBeTruthy();
   });
 
   it("declares every third-party package its shipped files import", () => {

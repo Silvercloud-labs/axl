@@ -4,8 +4,8 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import type { Manifest } from "@axl/compiler";
-import { GeneratorRegistry } from "@axl/generators";
+import type { Manifest } from "@silvercloudlabs/compiler";
+import { GeneratorRegistry } from "@silvercloudlabs/generators";
 import { c, icons, section, stepList, blank, errorBlock, env, warn, errorMsg } from "./ui.js";
 
 export async function generate(flowDir: string, outDir: string): Promise<void> {

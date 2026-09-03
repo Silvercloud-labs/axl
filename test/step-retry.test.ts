@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { Compiler } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
 // @ts-ignore
 import { AxlEngine, BackendError, ValidationError, RateLimitError } from "../packages/runtime/engine.js";
 // @ts-ignore

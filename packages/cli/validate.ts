@@ -4,8 +4,8 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { Compiler, formatDiagnostics, DiagnosticSeverity } from "@axl/compiler";
-import { GeneratorRegistry } from "@axl/generators";
+import { Compiler, formatDiagnostics, DiagnosticSeverity } from "@silvercloudlabs/compiler";
+import { GeneratorRegistry } from "@silvercloudlabs/generators";
 import { c, icons, section, stepList, blank, errorBlock, env } from "./ui.js";
 
 const FLOW_FILES = [

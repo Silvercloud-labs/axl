@@ -2,8 +2,8 @@
 // packages/vscode/src/diagnostics.ts — Pure diagnostics function (no VS Code deps)
 // ============================================================================
 
-import { Compiler } from "@axl/compiler";
-import type { Diagnostic } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
+import type { Diagnostic } from "@silvercloudlabs/compiler";
 
 /**
  * Run the full compiler validation pipeline on in-memory sources.

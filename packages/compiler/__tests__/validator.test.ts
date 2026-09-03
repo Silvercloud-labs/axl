@@ -67,7 +67,7 @@ ENTITY B
     }
 
     // IMPLEMENTED_GENERATORS is a hand-maintained default, because the compiler cannot
-    // import @axl/generators -- that package depends on this one. The guard that keeps
+    // import @silvercloudlabs/generators -- that package depends on this one. The guard that keeps
     // it in step with the real registry lives in test/generators-registry.test.ts,
     // outside this package, for exactly that reason.
 

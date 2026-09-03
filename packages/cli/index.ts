@@ -20,7 +20,7 @@ import { adapt } from "./adapt.js";
 import { inspect } from "./inspect.js";
 import { findProjectRoot, loadConfig, resolvePaths } from "./config.js";
 import { c, icons, blank, errorBlock, didYouMean, env, warn, resolveVersion, TAGLINE } from "./ui.js";
-import { GeneratorRegistry } from "@axl/generators";
+import { GeneratorRegistry } from "@silvercloudlabs/generators";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

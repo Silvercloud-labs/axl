@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
-import { Compiler } from "@axl/compiler";
+import { Compiler } from "@silvercloudlabs/compiler";
 // @ts-ignore
 import { adaptOpenApi, OpenApiAdaptError } from "../packages/cli/adapters/openapi.js";
 import { serve } from "../packages/cli/serve.js";

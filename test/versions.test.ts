@@ -19,7 +19,7 @@ const MANIFESTS = [
   "packages/vscode/package.json",
 ];
 
-const INTERNAL_DEPS = ["@axl/compiler", "@axl/generators"];
+const INTERNAL_DEPS = ["@silvercloudlabs/compiler", "@silvercloudlabs/generators"];
 
 function read(rel: string) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf-8"));

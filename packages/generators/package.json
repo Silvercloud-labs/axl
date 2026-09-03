@@ -1,5 +1,5 @@
 {
-  "name": "@axl/generators",
+  "name": "@silvercloudlabs/generators",
   "version": "1.7.0",
   "description": "AXL core generators for AI outputs (MCP, OpenAPI, etc.)",
   "type": "module",
@@ -16,7 +16,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@axl/compiler": "1.7.0"
+    "@silvercloudlabs/compiler": "1.7.0"
   },
   "license": "Apache-2.0",
   "publishConfig": {
