@@ -104,19 +104,15 @@ the artefact a running server loads cannot be produced from one.
 
 Requires **Node.js 20.19.0 or later**.
 
-> **Not on npm yet.** `scl-axl` has not had its first release, so install from source. See
-> [docs/installation.md](docs/installation.md).
-
 ```bash
-git clone https://github.com/Silvercloud-labs/axl.git
-cd axl
-npm install
-npm run build
-npm link --workspace=scl-axl
+npm install -g scl-axl
 
 axl --version
-# axl 1.7.0
+# axl 1.7.1
 ```
+
+See [docs/installation.md](docs/installation.md) for other package managers, local
+(non-global) installs, and installing from source.
 
 Scaffold, compile and serve a project:
 

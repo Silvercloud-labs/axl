@@ -13,10 +13,6 @@ AXL provides a command-line interface (CLI) to initialize, validate, compile, an
 
 ## 1. Global Installation (Recommended)
 
-> **Not published yet.** `scl-axl` has not had its first npm release, so the commands in
-> this section will fail with `404 Not Found` until it ships. Use
-> [Install from source](#4-install-from-source) in the meantime.
-
 The easiest way to use AXL across multiple projects is to install the CLI globally.
 
 ### npm
@@ -77,9 +73,24 @@ inline diagnostics from the real compiler, snippets and format-on-save.
 The extension lives in this repository at [`packages/vscode`](../packages/vscode), under
 the same Apache 2.0 licence as the compiler.
 
-> **Not published yet.** `axl-flow` has not been released to the Visual Studio
-> Marketplace, so searching the Extensions view will not find it. Build it from source
-> using the steps below.
+> **Not on the Visual Studio Marketplace yet.** Searching the Extensions view inside VS
+> Code will not find it. Until it's published there, install the `.vsix` file directly —
+> either download the latest one from
+> [Releases](https://github.com/yuvrajnag/axl-os/releases), or build it yourself.
+
+### Install from a downloaded `.vsix`
+
+1. Download `axl-flow-<version>.vsix` from
+   [Releases](https://github.com/yuvrajnag/axl-os/releases).
+2. In VS Code, open the Extensions view (`Ctrl+Shift+X` / `Cmd+Shift+X`), click the `...`
+   menu at the top, and choose **Install from VSIX...**
+3. Select the downloaded file.
+
+Or from a terminal:
+
+```bash
+code --install-extension axl-flow-<version>.vsix
+```
 
 ### Build and install from source
 

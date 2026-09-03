@@ -39,19 +39,19 @@ right answer for a compiler people build on.
 
 ### Is it production-ready?
 
-**Not yet, and the honest answer is that nothing has shipped.**
+**Not yet — it's shipped, but young.**
 
 | | Status |
 |---|---|
 | Compiler, runtime, CLI | Working, 750 tests passing |
-| Published to npm | No. First release not yet cut |
-| VS Code extension on the Marketplace | No. Build it from source |
+| Published to npm | Yes — `npm install -g scl-axl` |
+| VS Code extension on the Marketplace | Not yet. Install the `.vsix` from [Releases](https://github.com/yuvrajnag/axl-os/releases), or build it from source |
 | Used in production anywhere | Not that we know of |
 | Semantic versioning commitment | From 1.0 onward, yes |
 
-Install from source (see [docs/installation.md](docs/installation.md)) and treat it as
-early software. The security model is deliberate and the defaults fail closed, but "the
-design is careful" is not the same claim as "this has run in front of real traffic".
+Install it (see [docs/installation.md](docs/installation.md)) and treat it as early
+software. The security model is deliberate and the defaults fail closed, but "the design
+is careful" is not the same claim as "this has run in front of real traffic".
 
 ### What does AXL not do?
 
