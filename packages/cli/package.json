@@ -1,6 +1,6 @@
 {
   "name": "scl-axl",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "AXL command-line interface — compile, validate, doctor, init",
   "keywords": [
     "axl",
