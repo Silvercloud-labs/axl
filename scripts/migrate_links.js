@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const base = 'c:/Users/yuvrajnag/Desktop/silvercloud labs/axl/axl open source';
+const base = path.join(import.meta.dirname, '..');
 
 // 1. Update root README.md
 const rootReadmePath = path.join(base, 'README.md');

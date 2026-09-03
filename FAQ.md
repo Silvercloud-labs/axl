@@ -45,7 +45,7 @@ right answer for a compiler people build on.
 |---|---|
 | Compiler, runtime, CLI | Working, 750 tests passing |
 | Published to npm | Yes — `npm install -g scl-axl` |
-| VS Code extension on the Marketplace | Not yet. Install the `.vsix` from [Releases](https://github.com/yuvrajnag/axl-os/releases), or build it from source |
+| VS Code extension on the Marketplace | Not yet. Install the `.vsix` from [Releases](https://github.com/Silvercloud-labs/axl/releases), or build it from source |
 | Used in production anywhere | Not that we know of |
 | Semantic versioning commitment | From 1.0 onward, yes |
 

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const i18nBase = 'c:/Users/yuvrajnag/Desktop/silvercloud labs/axl/axl open source/docs/i18n';
+const i18nBase = path.join(import.meta.dirname, '..', 'docs', 'i18n');
 const langs = fs.readdirSync(i18nBase);
 
 const ROOT = '../../../';

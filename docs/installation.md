@@ -76,12 +76,12 @@ the same Apache 2.0 licence as the compiler.
 > **Not on the Visual Studio Marketplace yet.** Searching the Extensions view inside VS
 > Code will not find it. Until it's published there, install the `.vsix` file directly —
 > either download the latest one from
-> [Releases](https://github.com/yuvrajnag/axl-os/releases), or build it yourself.
+> [Releases](https://github.com/Silvercloud-labs/axl/releases), or build it yourself.
 
 ### Install from a downloaded `.vsix`
 
 1. Download `axl-flow-<version>.vsix` from
-   [Releases](https://github.com/yuvrajnag/axl-os/releases).
+   [Releases](https://github.com/Silvercloud-labs/axl/releases).
 2. In VS Code, open the Extensions view (`Ctrl+Shift+X` / `Cmd+Shift+X`), click the `...`
    menu at the top, and choose **Install from VSIX...**
 3. Select the downloaded file.
