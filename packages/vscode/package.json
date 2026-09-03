@@ -2,7 +2,7 @@
   "name": "axl-flow",
   "displayName": "AXL Flow Language",
   "description": "Syntax highlighting, hover tooltips, inline diagnostics, snippets, and format-on-save for the AXL .flow specification language",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "private": true,
   "publisher": "axl",
   "icon": "icons/marketplace-icon.png",
@@ -63,7 +63,7 @@
     "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@silvercloudlabs/compiler": "1.7.0",
+    "@silvercloudlabs/compiler": "1.7.1",
     "@types/vscode": "^1.60.0",
     "@vscode/vsce": "^3.9.2",
     "esbuild": "^0.28.1"

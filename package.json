@@ -2,7 +2,7 @@
   "name": "axl-monorepo",
   "private": true,
   "type": "module",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "AXL — AI-native application specification language and compiler",
   "workspaces": [
     "packages/compiler",

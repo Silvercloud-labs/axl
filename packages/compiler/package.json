@@ -1,6 +1,6 @@
 {
   "name": "@silvercloudlabs/compiler",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "AXL language compiler — lexer, parser, validator, and manifest generator",
   "type": "module",
   "main": "dist/index.js",
